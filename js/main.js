@@ -1,13 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+// Navbar scroll behavior for mobile/tablet
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+if (window.innerWidth < 1200) { // Only for mobile/tablet
     window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
             navbar.classList.remove('scrolled');
+            return;
         }
+        
+        if (currentScroll > lastScroll && !navbar.classList.contains('scrolled')) {
+            // Scroll down
+            navbar.classList.add('scrolled');
+        } else if (currentScroll < lastScroll && navbar.classList.contains('scrolled')) {
+            // Scroll up
+            navbar.classList.remove('scrolled');
+            navbar.classList.add('visible');
+        }
+        
+        lastScroll = currentScroll;
     });
+}
+
+// Mobile menu toggle - modified to handle navbar visibility
+const mobileMenuTriggers = document.querySelectorAll('.mobile-menu-trigger');
+const mobileSideMenu = document.querySelector('.mobile-side-menu');
+const overlay = document.querySelector('.overlay');
+const closeMenu = document.querySelector('.close-menu');
+
+mobileMenuTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function() {
+        mobileSideMenu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    });
+});
+
+closeMenu.addEventListener('click', function() {
+    mobileSideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+});
+
+overlay.addEventListener('click', function() {
+    mobileSideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = ''; // Re-enable scrolling
+});
+
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -112,4 +154,3 @@ document.addEventListener('DOMContentLoaded', function() {
             lazyLoadObserver.observe(img);
         });
     }
-});

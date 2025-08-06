@@ -12,6 +12,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    padding-bottom: 70px; /* Add padding to prevent content from being hidden behind bottom nav */
 }
 
 
@@ -40,37 +41,58 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.85) !important;
+    background-color: rgba(0, 0, 0, 0.85);
     padding: 15px 0;
     transition: all 0.3s ease;
+    position: relative; /* Changed from fixed to relative */
+    z-index: 1000;
 }
 
 .navbar.scrolled {
     padding: 10px 0;
-   background-color: rgba(45, 45, 45, 0.95) !important;
-    
+    background-color: rgba(45, 45, 45, 0.95);
+    transform: translateY(-100%); /* Hide when scrolling down */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
+.navbar.visible {
+    transform: translateY(0);
+}
+
+/* Mobile Side Menu Active State */
+.mobile-side-menu.active ~ .navbar {
+    display: none; /* Hide navbar when mobile menu is active */
+}
+
 
 .navbar-brand {
     font-size: 1.8rem;
     color: var(--text-light) !important;
 }
 
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
+.desktop-nav ul li {
+    margin-left: 30px;
+}
 
-
-.nav-link {
+.desktop-nav ul li a {
+    text-decoration: none;
     color: var(--text-light) !important;
     font-weight: 500;
-    margin: 0 10px;
     position: relative;
 }
 
-.nav-link:hover {
+.desktop-nav ul li a:hover {
     color: var(--secondary-color) !important;
 }
 
-.nav-link::after {
+.desktop-nav ul li a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -81,10 +103,146 @@ h1, h2, h3, h4, h5, h6 {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.desktop-nav ul li a:hover::after {
     width: 100%;
 }
 
+/*.btn-book-now {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    padding: 8px 20px;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-book-now:hover {
+    background-color: #033018;
+    transform: translateY(-2px);
+}*/
+
+/* Mobile Bottom Navigation */
+.mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 999;
+    padding: 10px 0;
+    justify-content: space-around;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 12px;
+    flex: 1;
+    padding: 5px 0;
+}
+
+.mobile-nav-item i {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.mobile-menu-trigger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mobile Side Menu */
+.mobile-side-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-color: var(--primary-color);
+}
+
+.mobile-side-menu-header .logo img {
+    height: 30px;
+    border-radius: 40px;
+}
+
+.close-menu {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.mobile-nav ul li {
+    margin-bottom: 15px;
+   
+}
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Active States */
+.mobile-side-menu.active {
+    right: 0;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
 .btn-book-now {
     background-color: var(--primary-color);
     color: white;
@@ -110,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     display: flex;
     align-items: center;
- margin-top: 110px;
+ margin-top: 100px;
     
 }
 
@@ -427,49 +585,89 @@ footer {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 991.98px) {
-    .navbar{
-        padding-bottom: 37px;
-    }
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    
-    .hero .lead {
-        font-size: 1.3rem;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
-    .navbar-collapse {
-        background-color: rgba(45, 45, 45, 0.98);
-        padding: 20px;
-        margin-top: 15px;
-        border-radius: 5px;
-    }
-    
-    .btn-book-now {
-        margin-left: 0;
-        margin-top: 10px;
-        display: block;
+@media (max-width: 1199.98px) { /* Applies to tablets and phones */
+    .navbar {
+        position: relative; /* Only fixed for mobile/tablet */
+        top: 0;
         width: 100%;
     }
-    .logo-img {
-        height: 40px; /* Slightly smaller on mobile */
+    
+    .navbar.scrolled {
+        transform: translateY(-100%);
     }
-    .logo-don{
-        font-size: medium;
+    
+    .navbar.visible {
+        transform: translateY(0);
     }
-
-    .logo-safaris{
-      font-size: medium;
-
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    /*.btn-book-now {
+        display: none;
+    }*/
+    
+    .mobile-bottom-nav {
+        display: flex;
+    }
+    .mobile-nav ul li {
+        margin-left: 0px;
     }
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 1200px) { /* Desktop only */
+    .mobile-bottom-nav {
+        display: none !important;
+    }
+    
+    .navbar {
+        position: relative;
+    }
+    
+    .navbar.scrolled {
+        transform: none;
+        position: fixed;
+        top: 0;
+    }
+}
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none;
+    }
+    
+    /*.btn-book-now {
+        margin-left: 0;
+        margin-top: 10px;
+        display: flex;
+        width: 100%;
+    }*/
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    .logo-don, .logo-safaris {
+        font-size: medium;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: flex;
+    }
+    
+    .navbar {
+        box-shadow: none;
+    }
+    
+    /* Ensure all bottom nav items have equal spacing */
+    .mobile-nav-item, .mobile-menu-trigger {
+        min-width: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+    
     .hero {
         min-height: 500px;
         height: auto;

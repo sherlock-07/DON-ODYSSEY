@@ -6,47 +6,84 @@
     <title>Contact Us | Don Odyssey Safaris</title>
     <meta name="description" content="Get in touch with Don Odyssey Safaris to plan your Tanzanian adventure. Contact our travel experts today.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/donald logo-03.jpg" alt="Don Odyssey Safaris Logo" class="logo-img d-inline-block align-left">
-                <span class="logo-don">Don Odyssey</span>
-                <span class="logo-safaris">Safaris</span>
+                <img src="images/donald logo-02.jpg" alt="Logo" class="logo-img">
+                <!--<span class="logo-don">Don Odyssey</span>
+                <span class="logo-safaris">Safaris</span>-->
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="kilimanjaro.html">Kilimanjaro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="safari.html">Safari</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="zanzibar.html">Zanzibar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-book-now" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button>
-                    </li>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+                    <li><a href="safari.html">Safari</a></li>
+                    <li><a href="zanzibar.html">Zanzibar</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
+            
+            <button class="btn btn-book-now" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button>
         </div>
     </nav>
+    
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="blog.html" class="mobile-nav-item">
+            <i class="fas fa-blog"></i>
+            <span>Blog</span>
+        </a>
+        <a href="safari.html" class="mobile-nav-item">
+            <i class="fas fa-camera"></i>
+            <span>Safari</span>
+        </a>
+        <a href="kilimanjaro.html" class="mobile-nav-item">
+            <i class="fas fa-mountain"></i>
+            <span>Kilimanjaro</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <div class="mobile-nav-item mobile-menu-trigger">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </div>
+    </div>
+    
+    <!-- Mobile Side Menu -->
+    <div class="mobile-side-menu">
+        <div class="mobile-side-menu-header">
+            <div class="logo">
+                <img src="images/donald logo-02.jpg" alt="Logo">
+            </div>
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="kilimanjaro.html">Kilimanjaro</a></li>
+                <li><a href="safari.html">Safari</a></li>
+                <li><a href="zanzibar.html">Zanzibar</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--<li>
+                    <button class="btn btn-book-now" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button>
+                </li>-->
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="overlay"></div>
 
     <main>
         <section class="hero hero-contact">
