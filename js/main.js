@@ -154,3 +154,41 @@ overlay.addEventListener('click', function() {
             lazyLoadObserver.observe(img);
         });
     }
+
+    //ITENERARY ACCORDION
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle itinerary accordions
+        const routeButtons = document.querySelectorAll('.route-nav-btn, .btn-view-itinerary');
+        
+        routeButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target') || this.getAttribute('href');
+                const itinerary = document.querySelector(targetId);
+                
+                // Close all itineraries first
+                document.querySelectorAll('.route-itinerary').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.route-nav-btn, .btn-view-itinerary').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Open selected itinerary
+                itinerary.classList.add('active');
+                this.classList.add('active');
+                
+                // Smooth scroll to itinerary
+                setTimeout(() => {
+                    itinerary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            });
+        });
+        
+        // Close all itineraries by default
+        document.querySelectorAll('.route-itinerary').forEach(item => {
+            item.classList.remove('active');
+        });
+    });

@@ -576,6 +576,444 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #d17a0f;
 }
 
+/* ========== PACKAGE PAGE STYLES ========== */
+/* Package Cards */
+.package-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.package-card .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
+
+.package-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    color: var(--secondary-color);
+    font-weight: 500;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.package-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.package-features {
+    margin: 20px 0;
+}
+
+.package-features h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.package-features ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.package-features li {
+    margin-bottom: 8px;
+}
+
+/* Package Detail Styles */
+.package-highlights {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.package-highlights span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(5, 68, 34, 0.1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.package-details {
+    background: rgba(5, 68, 34, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.detail-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-item i {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-top: 3px;
+}
+
+.detail-item h5 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.feature-box {
+    text-align: center;
+    padding: 25px 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.feature-box i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.feature-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.package-gallery {
+    margin-bottom: 30px;
+}
+
+.package-gallery img {
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.package-gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* Itinerary Timeline */
+.itinerary-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.itinerary-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-day {
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-left: 15px;
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Difficulty Meter */
+.difficulty-meter {
+    margin: 20px 0;
+}
+
+.difficulty-level {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.difficulty-progress {
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+.difficulty-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+/* ========== PACKAGE ROUTES & ITINERARIES ========== */
+/* Routes Section */
+.routes-container {
+    margin-bottom: 60px;
+}
+
+.route-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.route-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.route-card .card-body {
+    padding: 20px;
+}
+
+.route-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.route-card .card-subtitle {
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.route-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.stat-item i {
+    color: var(--secondary-color);
+}
+
+/* Itinerary Sections */
+.route-itinerary {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.route-itinerary:target {
+    animation: highlightItinerary 1.5s ease;
+}
+
+@keyframes highlightItinerary {
+    0% { background: rgba(234, 148, 35, 0.1); }
+    100% { background: white; }
+}
+
+.itinerary-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.itinerary-timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.itinerary-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-day {
+    position: absolute;
+    left: -50px;
+    width: 32px;
+    height: 32px;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: rgba(5, 68, 34, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    margin-bottom: 0;
+}
+
+/* Route Navigation */
+.route-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.route-nav-btn {
+    padding: 8px 20px;
+    background: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.route-nav-btn:hover,
+.route-nav-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ========== ACCORDION ITINERARY STYLES ========== */
+.route-itinerary {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    margin-bottom: 0;
+    padding: 0 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.route-itinerary.active {
+    max-height: 5000px; /* Adjust based on your longest itinerary */
+    padding: 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: max-height 0.5s ease-in, padding 0.3s ease, margin 0.3s ease;
+}
+
+.route-nav-btn {
+    cursor: pointer;
+}
+
+.route-nav-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Remove the :target styles since we're using JavaScript now */
+.route-itinerary:target {
+    animation: none;
+}
+
+/* Responsive Adjustments 
+@media (max-width: 768px) {
+    .itinerary-timeline {
+        padding-left: 40px;
+    }
+    
+    .timeline-day {
+        left: -40px;
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .route-card .card-img-top {
+        height: 160px;
+    }
+    
+    .route-itinerary {
+        padding: 20px 15px;
+    }
+}*/
+
+
 /* Modal */
 .modal-content {
     border-radius: 8px;
@@ -807,6 +1245,38 @@ footer {
     .inquiry-form-container {
         padding: 30px 20px;
     }
+
+    .package-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .package-highlights {
+        gap: 10px;
+    }
+    
+    .feature-box {
+        padding: 20px 10px;
+    }
+
+    .itinerary-timeline {
+        padding-left: 40px;
+    }
+    
+    .timeline-day {
+        left: -40px;
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .route-card .card-img-top {
+        height: 160px;
+    }
+    
+    .route-itinerary {
+        padding: 20px 15px;
+    }
 }
 
 /* Animations */
@@ -814,6 +1284,9 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+
+
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
