@@ -1612,6 +1612,7 @@ footer {
     
     .logo-don, .logo-safaris {
         font-size: medium;
+        display: none;
     }
     main {
         padding-bottom: 70px; /* Matches mobile nav height */
