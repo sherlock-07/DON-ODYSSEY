@@ -29,7 +29,7 @@
 
 
 .logo-img {
-    height: 70px; /* Adjust based on your logo's aspect ratio */
+    height: 50px; /* Adjust based on your logo's aspect ratio */
     width: auto;
     transition: all 0.3s ease;
     border-radius: 40px;
@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .navbar {
     background-color: rgba(0, 0, 0, 0.85);
-    padding: 15px 0;
+    padding: 12px 0;
     transition: all 0.3s ease;
     position: relative; /* Changed from fixed to relative */
     z-index: 1000;
@@ -1552,6 +1552,7 @@ footer {
         position: relative; /* Only fixed for mobile/tablet */
         top: 0;
         width: 100%;
+        padding: 5px 0;
     }
     
     .navbar.scrolled {
