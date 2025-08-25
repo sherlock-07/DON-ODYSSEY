@@ -186,9 +186,121 @@ overlay.addEventListener('click', function() {
                 }, 100);
             });
         });
+
+
         
         // Close all itineraries by default
         document.querySelectorAll('.route-itinerary').forEach(item => {
             item.classList.remove('active');
         });
     });
+
+      // Dynamic pricing calculation with upgrade buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const groupSizeSelect = document.getElementById('groupSize');
+    const upgradeCheckboxes = document.querySelectorAll('.upgrade-checkbox');
+    const addUpgradeButtons = document.querySelectorAll('.add-upgrade-btn');
+    const removeUpgradeButtons = document.querySelectorAll('.remove-upgrade-btn');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const priceDescriptionElement = document.getElementById('priceDescription');
+    
+    const basePrices = {
+        '1': 2650,
+        '2': 2250,
+        '3-4': 2150,
+        '5-6': 2050,
+        '7+': 1950
+    };
+    
+    const upgradePrices = {
+        'toiletTent': 150,
+        'extraDay': 250,
+        'hotelUpgrade': 200
+    };
+    
+    // Track active upgrades
+    const activeUpgrades = {};
+    
+    function updateUpgradeCardState(upgradeType, isActive) {
+        const upgradeCard = document.querySelector(`.upgrade-card[data-upgrade="${upgradeType}"]`);
+        const addButton = upgradeCard.querySelector('.add-upgrade-btn');
+        const removeButton = upgradeCard.querySelector('.remove-upgrade-btn');
+        const checkbox = document.getElementById(`${upgradeType}Checkbox`);
+        
+        if (isActive) {
+            addButton.classList.add('d-none');
+            removeButton.classList.remove('d-none');
+            upgradeCard.classList.add('border-primary');
+            upgradeCard.style.boxShadow = '0 0 0 2px rgba(13, 110, 253, 0.5)';
+            checkbox.checked = true;
+        } else {
+            addButton.classList.remove('d-none');
+            removeButton.classList.add('d-none');
+            upgradeCard.classList.remove('border-primary');
+            upgradeCard.style.boxShadow = '';
+            checkbox.checked = false;
+        }
+    }
+    
+    function calculateTotal() {
+        const groupSize = groupSizeSelect.value;
+        let total = basePrices[groupSize] || 2150;
+        
+        // Add prices for active upgrades
+        Object.keys(activeUpgrades).forEach(upgrade => {
+            if (activeUpgrades[upgrade]) {
+                total += upgradePrices[upgrade] || 0;
+            }
+        });
+        
+        totalPriceElement.textContent = `$${total.toLocaleString()}`;
+        
+        // Update the description
+        if (groupSize === '7+') {
+            priceDescriptionElement.textContent = 'Contact us for exact pricing for 7+ people';
+        } else {
+            const groupText = groupSize === '1' ? '1 person' : 
+                             groupSize === '2' ? '2 people' : 
+                             `${groupSize} people`;
+            priceDescriptionElement.textContent = `Per person for ${groupText} group`;
+        }
+    }
+    
+    // Set up event listeners for checkboxes
+    upgradeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const upgradeType = this.dataset.upgrade;
+            activeUpgrades[upgradeType] = this.checked;
+            updateUpgradeCardState(upgradeType, this.checked);
+            calculateTotal();
+        });
+    });
+    
+    // Set up event listeners for add buttons
+    addUpgradeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const upgradeCard = this.closest('.upgrade-card');
+            const upgradeType = upgradeCard.dataset.upgrade;
+            activeUpgrades[upgradeType] = true;
+            updateUpgradeCardState(upgradeType, true);
+            calculateTotal();
+        });
+    });
+    
+    // Set up event listeners for remove buttons
+    removeUpgradeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const upgradeCard = this.closest('.upgrade-card');
+            const upgradeType = upgradeCard.dataset.upgrade;
+            activeUpgrades[upgradeType] = false;
+            updateUpgradeCardState(upgradeType, false);
+            calculateTotal();
+        });
+    });
+    
+    // Group size change listener
+    groupSizeSelect.addEventListener('change', calculateTotal);
+    
+    // Initialize calculation
+    calculateTotal();
+});

@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation */
 .navbar {
     background-color: rgba(0, 0, 0, 0.85);
-    padding: 12px 0;
+    padding: 10px 0;
     transition: all 0.3s ease;
     position: relative; /* Changed from fixed to relative */
     z-index: 1000;
@@ -80,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-brand {
     font-size: 1.8rem;
     color: var(--text-light) !important;
+    
 }
 
 .desktop-nav ul {
@@ -428,6 +429,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
     gap: 20px;
 }
+
 
 .faq-mountain {
     flex: 1;
@@ -818,6 +820,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .route-card .card-body {
     padding: 20px;
+    
 }
 
 .route-card .card-title {
@@ -1546,6 +1549,130 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Pricing Table Styles */
+.pricing-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table th {
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pricing-table td {
+    padding: 15px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.pricing-table tr.highlighted {
+    background-color: rgba(13, 110, 253, 0.1);
+    font-weight: 600;
+}
+
+.pricing-table .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #198754;
+}
+
+/* Inclusion/Exclusion Cards */
+.inclusion-card, .exclusion-card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.inclusion-card .card-header, .exclusion-card .card-header {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+.inclusion-card .list-group-item, .exclusion-card .list-group-item {
+    border: none;
+    padding: 12px 15px;
+}
+
+/* Upgrade Cards */
+.upgrade-card {
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.upgrade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-icon {
+    color: #0d6efd;
+}
+
+/* Booking Form */
+.booking-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.price-summary {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+}
+
+/* Interactive upgrade cards */
+.upgrade-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upgrade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-card.border-primary {
+    border-width: 2px;
+}
+
+/* Button styles for upgrade cards */
+.add-upgrade-btn, .remove-upgrade-btn {
+    transition: all 0.2s ease;
+}
+
+/* Quick facts icons */
+.route-quick-facts .list-group-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .upgrade-card {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pricing-table {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-table th, 
+    .pricing-table td {
+        padding: 10px 8px;
+    }
+}
+
+
+
 /* Responsive Adjustments */
 @media (max-width: 1199.98px) { /* Applies to tablets and phones */
     .navbar {
@@ -1612,7 +1739,6 @@ footer {
     
     .logo-don, .logo-safaris {
         font-size: medium;
-        display: none;
     }
     main {
         padding-bottom: 70px; /* Matches mobile nav height */
