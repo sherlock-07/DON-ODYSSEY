@@ -30,7 +30,7 @@
 
 
 /* Prevent horizontal scrolling */
-html, body {
+html {
     overflow-x: hidden;
 }
 
