@@ -1651,6 +1651,111 @@ footer {
     text-align: center;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive adjustments for booking form */
+@media (max-width: 991.98px) {
+    .booking-card {
+        margin-bottom: 2rem;
+        position: relative !important;
+        top: 0 !important;
+    }
+    
+    .booking-card .card-body {
+        padding: 1.25rem;
+    }
+    
+    .pricing-table {
+        font-size: 0.85rem;
+    }
+    
+    .pricing-table th, 
+    .pricing-table td {
+        padding: 0.5rem;
+    }
+    
+    .pricing-table .btn {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .pricing-table-container {
+        overflow-x: auto;
+    }
+    
+    .pricing-table {
+        min-width: 600px;
+    }
+    
+    .upgrade-card {
+        margin-bottom: 1rem;
+    }
+    
+    .inclusion-card, .exclusion-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Sticky behavior for large screens */
+@media (min-width: 992px) {
+    .booking-card.sticky-top {
+        position: sticky;
+        top: 100px;
+        z-index: 1020;
+    }
+}
+
+/* Form element adjustments for mobile */
+.form-control, .form-select, .form-check-label {
+    font-size: 16px; /* Prevents zoom on iOS */
+}
+
+/* Price summary styling */
+.price-summary {
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
+}
+
+.price-summary h6 {
+    font-weight: 600;
+}
+
+/* Upgrade card interactive styles */
+.upgrade-card {
+    transition: all 0.3s ease;
+}
+
+.upgrade-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upgrade-card.border-primary {
+    border-width: 2px;
+}
+
+.add-upgrade-btn, .remove-upgrade-btn {
+    transition: all 0.2s ease;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .upgrade-card {

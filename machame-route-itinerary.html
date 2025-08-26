@@ -304,13 +304,72 @@
             </div>
         </section>
 
-        <!-- Price and Inclusions -->
-        <!-- Price and Inclusions -->
-        <!-- Price and Inclusions -->
+       <!-- Price and Inclusions -->
 <section class="section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <!-- Booking Form Sidebar - Now appears first on mobile -->
+            <div class="col-lg-4 order-lg-last order-first">
+                <div class="booking-card card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Book Your Climb</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="routeBookingForm">
+                            <div class="mb-3">
+                                <label for="startDate" class="form-label">Preferred Start Date</label>
+                                <input type="date" class="form-control" id="startDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="groupSize" class="form-label">Number of Climbers</label>
+                                <select class="form-select" id="groupSize">
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3-4" selected>3-4 people</option>
+                                    <option value="5-6">5-6 people</option>
+                                    <option value="7+">7+ people</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Upgrades</label>
+                                <div class="form-check">
+                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="toiletTentCheckbox" data-upgrade="toiletTent">
+                                    <label class="form-check-label" for="toiletTentCheckbox">
+                                        Private Toilet Tent (+$150)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="extraDayCheckbox" data-upgrade="extraDay">
+                                    <label class="form-check-label" for="extraDayCheckbox">
+                                        Extra Acclimatization Day (+$250)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="hotelUpgradeCheckbox" data-upgrade="hotelUpgrade">
+                                    <label class="form-check-label" for="hotelUpgradeCheckbox">
+                                        Luxury Hotel Upgrade (+$200)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="price-summary mb-3 p-3 bg-light rounded">
+                                <h6>Estimated Total: <span class="float-end" id="totalPrice">$2,150</span></h6>
+                                <p class="small text-muted mb-0" id="priceDescription">Per person for 3-4 people group</p>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Request Booking
+                                </button>
+                            </div>
+                        </form>
+                        <div class="mt-3 text-center">
+                            <p class="small">Have questions? <a href="contact.html">Contact us</a> or call <a href="tel:+255123456789">+255 123 456 789</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content Area -->
+            <div class="col-lg-8 order-lg-first order-last">
                 <h2 class="mb-4">Price & Inclusions</h2>
                 
                 <!-- Pricing Table -->
@@ -468,7 +527,7 @@
                             <div class="card upgrade-card h-100" data-upgrade="toiletTent">
                                 <div class="card-body text-center">
                                     <div class="upgrade-icon mb-3">
-                                        <i class="fas fa-tent fa-2x text-primary"></i>
+                                        <i class="fas fa-toilet text-primary"></i>
                                     </div>
                                     <h6>Private Toilet Tent</h6>
                                     <p class="price text-primary">+$150 per person</p>
@@ -509,69 +568,10 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Booking Form Sidebar -->
-            <div class="col-lg-4">
-                <div class="booking-card card shadow-sm sticky-top">
-                    <div class="card-header bg-primary text-white">
-                        <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Book Your Climb</h4>
-                    </div>
-                    <div class="card-body">
-                        <form id="routeBookingForm">
-                            <div class="mb-3">
-                                <label for="startDate" class="form-label">Preferred Start Date</label>
-                                <input type="date" class="form-control" id="startDate" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="groupSize" class="form-label">Number of Climbers</label>
-                                <select class="form-select" id="groupSize">
-                                    <option value="1">1 person</option>
-                                    <option value="2">2 people</option>
-                                    <option value="3-4" selected>3-4 people</option>
-                                    <option value="5-6">5-6 people</option>
-                                    <option value="7+">7+ people</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Upgrades</label>
-                                <div class="form-check">
-                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="toiletTentCheckbox" data-upgrade="toiletTent">
-                                    <label class="form-check-label" for="toiletTentCheckbox">
-                                        Private Toilet Tent (+$150)
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="extraDayCheckbox" data-upgrade="extraDay">
-                                    <label class="form-check-label" for="extraDayCheckbox">
-                                        Extra Acclimatization Day (+$250)
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="hotelUpgradeCheckbox" data-upgrade="hotelUpgrade">
-                                    <label class="form-check-label" for="hotelUpgradeCheckbox">
-                                        Luxury Hotel Upgrade (+$200)
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="price-summary mb-3 p-3 bg-light rounded">
-                                <h6>Estimated Total: <span class="float-end" id="totalPrice">$2,150</span></h6>
-                                <p class="small text-muted mb-0" id="priceDescription">Per person for 3-4 people group</p>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane me-2"></i>Request Booking
-                                </button>
-                            </div>
-                        </form>
-                        <div class="mt-3 text-center">
-                            <p class="small">Have questions? <a href="contact.html">Contact us</a> or call <a href="tel:+255123456789">+255 123 456 789</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
+
 
         <!-- Testimonials -->
         <section class="section-padding bg-light">

@@ -195,7 +195,8 @@ overlay.addEventListener('click', function() {
         });
     });
 
-      // Dynamic pricing calculation with upgrade buttons
+
+    // Dynamic pricing calculation with upgrade buttons
 document.addEventListener('DOMContentLoaded', function() {
     const groupSizeSelect = document.getElementById('groupSize');
     const upgradeCheckboxes = document.querySelectorAll('.upgrade-checkbox');
