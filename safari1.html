@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Wildlife Safaris | Don Odyssey Safaris</title>
+    <meta name="description" content="Premium safari tours in Serengeti, Ngorongoro & Tarangire with Don Odyssey Safaris. See the Big Five and Great Migration. Custom safari packages available.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Safari Routes Section Styles */
+        .safari-routes-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .safari-routes-section h2 {
+            color: #054422;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .safari-routes-section > p {
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .safari-routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .safari-route-card {
+            position: relative;
+            min-height: 380px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .safari-route-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .safari-route-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .safari-route-card:hover .safari-route-image {
+            transform: scale(1.05);
+        }
+
+        .safari-route-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+            z-index: 2;
+        }
+
+        .safari-route-content {
+            position: relative;
+            z-index: 3;
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .safari-route-content h3 {
+            margin: 0 0 0.8rem;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .safari-route-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .safari-route-meta span {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .safari-route-description {
+            font-size: 0.95rem;
+            margin: 0.5rem 0 1rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .safari-route-price {
+            font-size: 1.2rem;
+            color: #ea9423;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .safari-route-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: auto;
+        }
+
+        .safari-route-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .safari-route-buttons .details {
+            background: #054422;
+            color: white;
+        }
+
+        .safari-route-buttons .inquire {
+            background: #ea9423;
+            color: white;
+        }
+
+        .safari-route-buttons a:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .safari-routes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .safari-route-card {
+                min-height: 350px;
+            }
+            
+            .safari-route-content h3 {
+                font-size: 1.2rem;
+            }
+            
+            .safari-route-meta span {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+            }
+            
+            .safari-route-description {
+                font-size: 0.85rem;
+            }
+            
+            .safari-route-price {
+                font-size: 1.1rem;
+            }
+            
+            .safari-route-buttons a {
+                font-size: 0.85rem;
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation and other sections remain the same as in your safari.html file -->
+    
+    <main>
+        <!-- Hero section and other content remains the same -->
+        
+        <!-- Redesigned Safari Destinations Section -->
+        <section class="safari-routes-section">
+            <h2>Safari Experiences</h2>
+            <p>Choose the safari adventure that matches your interests and preferences</p>
+            <div class="safari-routes-grid">
+                
+                <!-- Day Trips -->
+                <div class="safari-route-card">
+                    <img src="images/DON.jpg" alt="Day Trips Safari" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Day Trips</h3>
+                            <div class="safari-route-meta">
+                                <span>1 Day</span>
+                                <span>All Levels</span>
+                                <span>Near Arusha</span>
+                            </div>
+                            <p class="safari-route-description">Perfect for those with limited time. Experience a full day of wildlife viewing in nearby parks.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $250</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?budget-safari" alt="Budget Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Budget Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>3-5 Days</span>
+                                <span>Camping</span>
+                                <span>Group Joining</span>
+                            </div>
+                            <p class="safari-route-description">Affordable adventures without compromising on wildlife experiences. Camping accommodations.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $800</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calving Season Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?calving" alt="Calving Season Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Calving Season Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>Jan-Mar</span>
+                                <span>Southern Serengeti</span>
+                                <span>Predator Action</span>
+                            </div>
+                            <p class="safari-route-description">Witness the birth of thousands of wildebeest calves and incredible predator interactions.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $1,500</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combined Beach & Safari Package -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?beach-safari" alt="Beach & Safari Package" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Beach & Safari Combo</h3>
+                            <div class="safari-route-meta">
+                                <span>7-10 Days</span>
+                                <span>Zanzibar</span>
+                                <span>Luxury</span>
+                            </div>
+                            <p class="safari-route-description">The perfect combination of wildlife adventure and tropical beach relaxation on Zanzibar.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $2,200</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combined Trekking and Safari Package -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?trekking-safari" alt="Trekking & Safari Package" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Trekking & Safari Combo</h3>
+                            <div class="safari-route-meta">
+                                <span>10-14 Days</span>
+                                <span>Kilimanjaro</span>
+                                <span>Adventure</span>
+                            </div>
+                            <p class="safari-route-description">Conquer Mount Kilimanjaro and then enjoy a rewarding safari through Tanzania's best parks.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $3,500</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cultural & Community Experience -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?cultural-safari" alt="Cultural & Community Experience" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Cultural Experiences</h3>
+                            <div class="safari-route-meta">
+                                <span>4-7 Days</span>
+                                <span>Maasai</span>
+                                <span>Community</span>
+                            </div>
+                            <p class="safari-route-description">Immerse yourself in local cultures with visits to Maasai villages and community projects.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $1,200</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?family-safari" alt="Family Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Family Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>5-8 Days</span>
+                                <span>Kid-Friendly</span>
+                                <span>Education</span>
+                            </div>
+                            <p class="safari-route-description">Specially designed for families with children, featuring shorter drives and educational activities.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $1,800</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honeymoon Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?honeymoon-safari" alt="Honeymoon Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Honeymoon Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>7-10 Days</span>
+                                <span>Romantic</span>
+                                <span>Luxury</span>
+                            </div>
+                            <p class="safari-route-description">Romantic safari experiences with private guides, luxury accommodations, and special touches.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $2,800</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?luxury-safari" alt="Luxury Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Luxury Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>5-10 Days</span>
+                                <span>5-Star</span>
+                                <span>Exclusive</span>
+                            </div>
+                            <p class="safari-route-description">The ultimate safari experience with premium lodges, private guides, and exclusive activities.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $3,000</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Migration Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?migration" alt="Migration Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Migration Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>7-10 Days</span>
+                                <span>Serengeti</span>
+                                <span>Seasonal</span>
+                            </div>
+                            <p class="safari-route-description">Follow the Great Migration through the Serengeti ecosystem for incredible wildlife spectacles.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $2,500</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serengeti Fly-In Safaris -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?fly-in-safari" alt="Serengeti Fly-In Safaris" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Fly-In Safaris</h3>
+                            <div class="safari-route-meta">
+                                <span>4-7 Days</span>
+                                <span>Remote</span>
+                                <span>Exclusive</span>
+                            </div>
+                            <p class="safari-route-description">Access remote areas of Serengeti by small aircraft for exclusive wildlife viewing experiences.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $2,800</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari from Zanzibar -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?zanzibar-safari" alt="Safari from Zanzibar" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Safari from Zanzibar</h3>
+                            <div class="safari-route-meta">
+                                <span>3-5 Days</span>
+                                <span>Flight Included</span>
+                                <span>Beach Combo</span>
+                            </div>
+                            <p class="safari-route-description">Combine your Zanzibar beach holiday with a short safari to mainland Tanzania's best parks.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $1,500</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari from Arusha -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?arusha-safari" alt="Safari from Arusha" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Safari from Arusha</h3>
+                            <div class="safari-route-meta">
+                                <span>2-7 Days</span>
+                                <span>Northern Circuit</span>
+                                <span>All Budgets</span>
+                            </div>
+                            <p class="safari-route-description">Convenient safari options starting from Arusha to nearby national parks like Tarangire and Manyara.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $600</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safari from Dar es Salaam -->
+                <div class="safari-route-card">
+                    <img src="https://source.unsplash.com/random/600x400?dar-salaam-safari" alt="Safari from Dar es Salaam" class="safari-route-image">
+                    <div class="safari-route-overlay"></div>
+                    <div class="safari-route-content">
+                        <div>
+                            <h3>Safari from Dar es Salaam</h3>
+                            <div class="safari-route-meta">
+                                <span>3-6 Days</span>
+                                <span>Southern Parks</span>
+                                <span>Selous & Mikumi</span>
+                            </div>
+                            <p class="safari-route-description">Explore Tanzania's less crowded southern parks accessible from Dar es Salaam.</p>
+                        </div>
+                        <div>
+                            <p class="safari-route-price">From $900</p>
+                            <div class="safari-route-buttons">
+                                <a href="#" class="details">View Details</a>
+                                <a href="#" class="inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal">Inquire</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- The rest of the content remains the same -->
+    </main>
+
+    <!-- Footer and modals remain the same -->
+</body>
+</html>

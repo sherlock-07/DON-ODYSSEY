@@ -14,11 +14,12 @@
         .packages-hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/kilimanjaro-packages-hero.jpg') no-repeat center center;
             background-size: cover;
-            padding: 120px 0 80px;
+            padding: 100px 0 60px; /*120px 0 80px;*/
             color: white;
             text-align: center;
         }
-        
+
+             
         .filter-container {
             background: white;
             border-radius: 8px;
@@ -62,24 +63,24 @@
         .package-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 20px; /*30px;*/
+            margin-bottom: 40px;/*50px;*/
         }
         
         .package-card {
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow:0 4px 12px rgba(0,0,0,0.08); /*0 5px 15px rgba(0,0,0,0.1);*/
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             background: white;
-            height: 100%;
+            height: auto;/*70%;*/
             display: flex;
             flex-direction: column;
         }
         
         .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px); /*translateY(-10px);*/
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);/*0 15px 30px rgba(0,0,0,0.15);*/
         }
         
         .package-image {
@@ -99,7 +100,7 @@
         }
         
         .package-content {
-            padding: 20px;
+            padding: 16px; /*20px;*/
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -114,7 +115,7 @@
         .package-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 12px; /*15px;*/
             font-size: 0.9rem;
             color: #6c757d;
         }
@@ -185,26 +186,198 @@
         .btn-inquire:hover {
             background: #d17a0f;
         }
-        
-        .comparison-table {
-            margin: 60px 0;
+
+        .routes-section {
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        .comparison-table .table th {
-            background: #054422;
-            color: white;
+
+        .routes-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
             text-align: center;
-            vertical-align: middle;
+            margin-bottom: 0.5rem;
+        }
+
+        .routes-section p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .route-card {
+            position: relative;
+            min-height: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .route-card:hover {
+            transform: translateY(-5px); /*translateY(-10px);*/
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);/*0 15px 30px rgba(0,0,0,0.15);*/
+        }
+
+        .route-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+    
+        .route-card:hover .route-image {
+            transform: scale(1.05);
         }
         
-        .comparison-table .table-hover tbody tr:hover {
-            background-color: rgba(5, 68, 34, 0.05);
+
+        .route-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .route-content {
+            position: relative;
+            z-index: 3;
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .route-content h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .route-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .route-meta span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 10px;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .route-description {
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            color: #fff;
+        }
+
+        .route-price {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .route-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .route-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 0.4rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+
+        .route-buttons .details {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .route-buttons .inquire {
+            background: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        .route-buttons a:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .routes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .route-card {
+                min-height: 280px;
+            }
+
+            .route-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .route-meta span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .route-description {
+                font-size: 0.8rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .route-price {
+                font-size: 0.9rem;
+            }
+
+            .route-buttons a {
+                font-size: 0.75rem;
+                padding: 0.3rem;
+            }
         }
         
-        .comparison-feature {
-            font-weight: 500;
-        }
-        
+          
         @media (max-width: 768px) {
             .package-grid {
                 grid-template-columns: 1fr;
@@ -411,438 +584,323 @@
 
          <!-- Packages Grid -->
                 
-         <section class="section-padding" id="routes"></section>
-        <div class="container">
-                        <div class="section-header">
-                            <h2>Kilimanjaro Climbing Routes</h2>
-                            <p>Choose the path that matches your experience and preferences</p>
+       <section class="routes-section">
+        <h2>Kilimanjaro Climbing Routes</h2>
+        <p style="color:#6c757d ;">Choose the path that matches your experience and preferences</p>
+        <div class="routes-grid">
+            <!-- Machame Route (6 Days) -->
+            <div class="route-card">
+                <img src="images/DON.jpg" alt="Machame Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Machame Route (6 Days)</h3>
+                        <div class="route-meta">
+                            <span>6 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Scenic Diversity</span>
                         </div>
-                
-                        <div class="route-nav">
-                        </section>          
-        <div class="package-grid">
-
-            <!-- Machame Route 6 day -->
-            <div class="package-card" data-duration="6-7" data-difficulty="moderate" data-success="92" data-type="scenic popular">
-                <div class="package-image">
-                    <img src="images/DON.jpg" alt="Machame Route">
-                </div>
-                <div class="package-content">
-                <h3 class="package-title">Machame Route (6 Days)</h3>
-                <div class="package-meta">
-                    <span class="package-days"><i class="fas fa-clock"></i> 6 Days</span>
-                    <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-                </div>
-                <p class="package-description">Known as the "Whiskey Route," this scenic path offers great acclimatization and high success rates through diverse ecological zones.</p>
-                <div class="package-features">
-                    <div class="package-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Success Rate: 92%</span>
+                        <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
                     </div>
-                    <div class="package-feature">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Best Time: Jun-Oct, Dec-Feb</span>
-                    </div>
-                    <div class="package-feature">
-                        <i class="fas fa-mountain"></i>
-                        <span>Scenic Diversity</span>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="6-day-machame.html" class="details">View Itinerary</a>
+                          
+                        </div>
                     </div>
                 </div>
-                <div class="package-price">From $2,150</div>
-                <p class="price-note">Per person for 3-4 people</p>
-                <div class="package-actions">
-                    <a href="6-day-machame.html" class="btn btn-details">View Details</a>
-                    <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Machame Route">Inquire</button>
-                </div>
             </div>
-        </div>
 
-    <!-- Marangu Route 5-Day -->
-    <div class="package-card" data-duration="5" data-difficulty="easy" data-success="85" data-type="popular">
-        <div class="package-image">
-            <img src="images/marangu-route-5-day.jpg" alt="Marangu Route 5-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Marangu Route (5 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 5 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Easy-Moderate</span>
-            </div>
-            <p class="package-description">The only route with hut accommodations, often called the "Coca-Cola Route" for its popularity and relative comfort.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 85%</span>
+            <!-- Marangu Route (5 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Marangu Route (5 Days)</h3>
+                        <div class="route-meta">
+                            <span>5 Days</span>
+                            <span>Easy-Moderate</span>
+                            <span>Success Rate: 85%</span>
+                            <span>All Year</span>
+                            <span>Mountain Huts</span>
+                        </div>
+                        <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $1,950</p>
+                        <div class="route-buttons">
+                            <a href="5-day-marangu.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: All Year</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-house-user"></i>
-                    <span>Mountain Huts</span>
-                </div>
             </div>
-            <div class="package-price">From $1,950</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="5-day-marangu.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Marangu Route 5-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-      <!-- Machame Route 7 day-->
-      <div class="package-card" data-duration="6-7" data-difficulty="moderate" data-success="92" data-type="scenic popular">
-        <div class="package-image">
-            <img src="images/donald logo-02.jpg" alt="Machame Route">
-        </div>
-        <div class="package-content">
-        <h3 class="package-title">Machame Route (7 Days)</h3>
-        <div class="package-meta">
-            <span class="package-days"><i class="fas fa-clock"></i> 7 Days</span>
-            <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-        </div>
-        <p class="package-description"></p>"The "Whiskey Route" - One of Kilimanjaro's most scenic and popular paths</p>
-        <div class="package-features">
-            <div class="package-feature">
-                <i class="fas fa-check-circle"></i>
-                <span>Success Rate: 92%</span>
+            <!-- Machame Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?machame" alt="Machame Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Machame Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Scenic Diversity</span>
+                        </div>
+                        <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="7-day-machame.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="package-feature">
-                <i class="fas fa-calendar-alt"></i>
-                <span>Best Time: Jun-Oct, Dec-Feb</span>
-            </div>
-            <div class="package-feature">
-                <i class="fas fa-mountain"></i>
-                <span>Scenic Diversity</span>
-            </div>
-        </div>
-        <div class="package-price">From $2,150</div>
-        <p class="price-note">Per person for 3-4 people</p>
-        <div class="package-actions">
-            <a href="7-day-machame.html" class="btn btn-details">View Details</a>
-            <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Machame Route">Inquire</button>
-        </div>
-    </div>
-</div>
 
-    <!-- Marangu Route 6-Day -->
-    <div class="package-card" data-duration="6" data-difficulty="easy" data-success="90" data-type="popular">
-        <div class="package-image">
-            <img src="images/marangu-route-6-day.jpg" alt="Marangu Route 6-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Marangu Route (6 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 6 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Easy-Moderate</span>
-            </div>
-            <p class="package-description">Extended version with acclimatization day for higher success rates. Hut accommodations throughout.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 90%</span>
+            <!-- Marangu Route (6 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Marangu Route (6 Days)</h3>
+                        <div class="route-meta">
+                            <span>6 Days</span>
+                            <span>Easy-Moderate</span>
+                            <span>Success Rate: 90%</span>
+                            <span>All Year</span>
+                            <span>Mountain Huts</span>
+                        </div>
+                        <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="6-day-marangu.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: All Year</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-house-user"></i>
-                    <span>Mountain Huts</span>
-                </div>
             </div>
-            <div class="package-price">From $2,150</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="6-day-marangu.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Marangu Route 6-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Lemosho Route 7-Day -->
-    <div class="package-card" data-duration="7" data-difficulty="moderate" data-success="95" data-type="scenic">
-        <div class="package-image">
-            <img src="images/lemosho-route-7-day.jpg" alt="Lemosho Route 7-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Lemosho Route (7 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 7 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">Our most scenic route with gradual ascent for excellent acclimatization and the highest success rate of all routes.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 95%</span>
+            <!-- Lemosho Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Lemosho Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 95%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Best Acclimatization</span>
+                        </div>
+                        <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,450</p>
+                        <div class="route-buttons">
+                            <a href="7-day-lemosho.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct, Dec-Feb</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Best Acclimatization</span>
-                </div>
             </div>
-            <div class="package-price">From $2,450</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="7-day-lemosho.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Lemosho Route 7-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Lemosho Route 8-Day -->
-    <div class="package-card" data-duration="8" data-difficulty="moderate" data-success="98" data-type="scenic">
-        <div class="package-image">
-            <img src="images/lemosho-route-8-day.jpg" alt="Lemosho Route 8-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Lemosho Route (8 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 8 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">Extended version with extra acclimatization day for the highest success rate. Perfect for those wanting more time on the mountain.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 98%</span>
+            <!-- Lemosho Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Lemosho Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 98%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Optimal Acclimatization</span>
+                        </div>
+                        <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,750</p>
+                        <div class="route-buttons">
+                            <a href="8-day-lemosho.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct, Dec-Feb</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Optimal Acclimatization</span>
-                </div>
             </div>
-            <div class="package-price">From $2,750</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="8-day-lemosho.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Lemosho Route 8-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Rongai Route 7-Day -->
-    <div class="package-card" data-duration="7" data-difficulty="moderate" data-success="90" data-type="scenic">
-        <div class="package-image">
-            <img src="images/rongai-route-7-day.jpg" alt="Rongai Route 7-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Rongai Route (7 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 7 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">The only northern approach, less crowded with wilderness feel and consistent success rates throughout the year.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 90%</span>
+            <!-- Rongai Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Rongai Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 90%</span>
+                            <span>Nov-Mar</span>
+                            <span>Less Crowded</span>
+                        </div>
+                        <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,250</p>
+                        <div class="route-buttons">
+                            <a href="7-day-rongai.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Nov-Mar</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-users-slash"></i>
-                    <span>Less Crowded</span>
-                </div>
             </div>
-            <div class="package-price">From $2,250</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="7-day-rongai.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Rongai Route 7-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Rongai Route 8-Day -->
-    <div class="package-card" data-duration="8" data-difficulty="moderate" data-success="93" data-type="scenic">
-        <div class="package-image">
-            <img src="images/rongai-route-8-day.jpg" alt="Rongai Route 8-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Rongai Route (8 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 8 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">Extended version with extra day for acclimatization and exploration of the northern slopes. Less crowded and scenic.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 93%</span>
+            <!-- Rongai Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Rongai Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 93%</span>
+                            <span>Nov-Mar</span>
+                            <span>Less Crowded</span>
+                        </div>
+                        <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,550</p>
+                        <div class="route-buttons">
+                            <a href="8-day-rongai.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Nov-Mar</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-users-slash"></i>
-                    <span>Less Crowded</span>
-                </div>
             </div>
-            <div class="package-price">From $2,550</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="8-day-rongai.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Rongai Route 8-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Shira Route 7-Day -->
-    <div class="package-card" data-duration="7" data-difficulty="moderate" data-success="92" data-type="scenic">
-        <div class="package-image">
-            <img src="images/shira-route-7-day.jpg" alt="Shira Route 7-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Shira Route (7 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 7 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">High-altitude start on the Shira Plateau with stunning views. Less traveled route with excellent acclimatization profile.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 92%</span>
+            <!-- Shira Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Remote Experience</span>
+                        </div>
+                        <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,350</p>
+                        <div class="route-buttons">
+                            <a href="7-day-shira.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct, Dec-Feb</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-road"></i>
-                    <span>Remote Experience</span>
-                </div>
             </div>
-            <div class="package-price">From $2,350</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="7-day-shira.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Shira Route 7-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Shira Route 8-Day -->
-    <div class="package-card" data-duration="8" data-difficulty="moderate" data-success="95" data-type="scenic">
-        <div class="package-image">
-            <img src="images/shira-route-8-day.jpg" alt="Shira Route 8-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Shira Route (8 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 8 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">Extended version with additional acclimatization day. Explores remote western slopes with panoramic views.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 95%</span>
+            <!-- Shira Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 95%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Remote Experience</span>
+                        </div>
+                        <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,650</p>
+                        <div class="route-buttons">
+                            <a href="8-day-shira.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct, Dec-Feb</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-road"></i>
-                    <span>Remote Experience</span>
-                </div>
             </div>
-            <div class="package-price">From $2,650</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="8-day-shira.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Shira Route 8-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Umbwe Route 7-Day -->
-    <div class="package-card" data-duration="7" data-difficulty="challenging" data-success="85" data-type="popular">
-        <div class="package-image">
-            <img src="images/umbwe-route-7-day.jpg" alt="Umbwe Route 7-Day">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Umbwe Route (7 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 7 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Challenging</span>
-            </div>
-            <p class="package-description">The steepest and most direct route for experienced trekkers seeking a challenging ascent with fewer crowds.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 85%</span>
+            <!-- Umbwe Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?umbwe" alt="Umbwe Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Umbwe Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Challenging</span>
+                            <span>Success Rate: 85%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Experienced Trekkers</span>
+                        </div>
+                        <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,050</p>
+                        <div class="route-buttons">
+                            <a href="7-day-umbwe.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct, Dec-Feb</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-running"></i>
-                    <span>For Experienced Trekkers</span>
-                </div>
             </div>
-            <div class="package-price">From $2,050</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="7-day-umbwe.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Umbwe Route 7-Day">Inquire</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Northern Circuit Route -->
-    <div class="package-card" data-duration="9" data-difficulty="moderate" data-success="98" data-type="scenic">
-        <div class="package-image">
-            <img src="images/northern-circuit-route.jpg" alt="Northern Circuit Route">
-        </div>
-        <div class="package-content">
-            <h3 class="package-title">Northern Circuit (9 Days)</h3>
-            <div class="package-meta">
-                <span class="package-days"><i class="fas fa-clock"></i> 9 Days</span>
-                <span class="package-difficulty"><i class="fas fa-signal"></i> Moderate</span>
-            </div>
-            <p class="package-description">The newest and longest route, circumnavigating the mountain with unparalleled views and the highest success rate.</p>
-            <div class="package-features">
-                <div class="package-feature">
-                    <i class="fas fa-check-circle"></i>
-                    <span>Success Rate: 98%</span>
+            <!-- Northern Circuit (9 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?northern-circuit" alt="Northern Circuit" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Northern Circuit (9 Days)</h3>
+                        <div class="route-meta">
+                            <span>9 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 98%</span>
+                            <span>Jun-Oct</span>
+                            <span>Most Scenic</span>
+                        </div>
+                        <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,850</p>
+                        <div class="route-buttons">
+                            <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
                 </div>
-                <div class="package-feature">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Best Time: Jun-Oct</span>
-                </div>
-                <div class="package-feature">
-                    <i class="fas fa-road"></i>
-                    <span>Most Scenic</span>
-                </div>
-            </div>
-            <div class="package-price">From $2,850</div>
-            <p class="price-note">Per person for 3-4 people</p>
-            <div class="package-actions">
-                <a href="9-day-northern-circuit.html" class="btn btn-details">View Details</a>
-                <button class="btn btn-inquire" data-bs-toggle="modal" data-bs-target="#inquiryModal" data-route="Northern Circuit Route">Inquire</button>
             </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
 
    
     </main>

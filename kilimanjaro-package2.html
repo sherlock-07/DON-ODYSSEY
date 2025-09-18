@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilimanjaro Climbing Packages</title>
+    <style>
+        :root {
+            --primary-color: #054422; /* Deep Emerald */
+            --secondary-color: #ea9423; /* Golden Orange */
+            --dark-color: #2d2d2d;
+            --light-color: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: var(--light-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            margin: 0 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        nav a.book-now {
+            background: var(--secondary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/random/1600x400?kilimanjaro') no-repeat center center/cover;
+            padding: 3rem 1rem;
+            text-align: center;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .routes-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .routes-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .routes-section p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .route-card {
+            position: relative;
+            min-height: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .route-card:hover {
+            transform: translateY(-5px); /*translateY(-10px);*/
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);/*0 15px 30px rgba(0,0,0,0.15);*/
+        }
+
+        .route-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+    
+        .route-card:hover .route-image {
+            transform: scale(1.05);
+        }
+        
+
+        .route-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .route-content {
+            position: relative;
+            z-index: 3;
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .route-content h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .route-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .route-meta span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 10px;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .route-description {
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            color: #fff;
+        }
+
+        .route-price {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .route-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .route-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 0.4rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+
+        .route-buttons .details {
+            background: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .route-buttons .inquire {
+            background: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        .route-buttons a:hover {
+            opacity: 0.9;
+        }
+
+        .why-climb, .climbing-experience, .faqs, .plan-adventure {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .why-climb h2, .climbing-experience h2, .faqs h2, .plan-adventure h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-climb-grid, .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .why-climb-item, .experience-item {
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .faq-item h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .plan-adventure form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .plan-adventure input, .plan-adventure textarea {
+            padding: 0.5rem;
+            border: 1px solid var(--text-dark);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .plan-adventure button {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .routes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .route-card {
+                min-height: 280px;
+            }
+
+            .route-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .route-meta span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+
+            .route-description {
+                font-size: 0.8rem;
+                -webkit-line-clamp: 2;
+            }
+
+            .route-price {
+                font-size: 0.9rem;
+            }
+
+            .route-buttons a {
+                font-size: 0.75rem;
+                padding: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Trekking</a>
+            <a href="#">Safari</a>
+            <a href="#">Zanzibar</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" class="book-now">Book Now</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Kilimanjaro Climbing Packages</h1>
+        <p>Choose from our expertly crafted routes to conquer Africa's highest peak</p>
+    </section>
+
+    <section class="climbing-experience">
+        <h2>Kilimanjaro Climbing Experience</h2>
+        <p>At 5,895 meters (19,341 feet), Mount Kilimanjaro is Africa's highest peak and the world's tallest free-standing mountain. Our carefully designed climbing itineraries and expert guides give you the best chance of reaching Uhuru Peak while enjoying the journey through Kilimanjaro's stunning ecological zones.</p>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <h3>Location</h3>
+                <p>Northern Tanzania, near Moshi</p>
+            </div>
+            <div class="experience-item">
+                <h3>Best Time to Climb</h3>
+                <p>January-March and June-October</p>
+            </div>
+            <div class="experience-item">
+                <h3>Temperature Range</h3>
+                <p>+25°C to -20°C (base to summit)</p>
+            </div>
+            <div class="experience-item">
+                <h3>Overview</h3>
+                <p>5-9 Days, Small Groups, 90% Success Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-climb">
+        <h2>Why Climb Kilimanjaro With Us</h2>
+        <div class="why-climb-grid">
+            <div class="why-climb-item">
+                <h3>Safety First</h3>
+                <p>Daily health checks, emergency oxygen, and certified wilderness first responders on every climb.</p>
+            </div>
+            <div class="why-climb-item">
+                <h3>Route Expertise</h3>
+                <p>We carefully select routes for optimal acclimatization and scenic diversity.</p>
+            </div>
+            <div class="why-climb-item">
+                <h3>Quality Meals</h3>
+                <p>Nutritious, energy-packed meals prepared by our mountain chefs.</p>
+            </div>
+            <div class="why-climb-item">
+                <h3>KPAP Certified</h3>
+                <p>We meet the highest standards for porter treatment and ethical climbing practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="routes-section">
+        <h2>Kilimanjaro Climbing Routes</h2>
+        <p>Choose the path that matches your experience and preferences</p>
+        <div class="routes-grid">
+            <!-- Machame Route (6 Days) -->
+            <div class="route-card">
+                <img src="images/DON.jpg" alt="Machame Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Machame Route (6 Days)</h3>
+                        <div class="route-meta">
+                            <span>6 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Scenic Diversity</span>
+                        </div>
+                        <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marangu Route (5 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Marangu Route (5 Days)</h3>
+                        <div class="route-meta">
+                            <span>5 Days</span>
+                            <span>Easy-Moderate</span>
+                            <span>Success Rate: 85%</span>
+                            <span>All Year</span>
+                            <span>Mountain Huts</span>
+                        </div>
+                        <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $1,950</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machame Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?machame" alt="Machame Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Machame Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Scenic Diversity</span>
+                        </div>
+                        <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marangu Route (6 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Marangu Route (6 Days)</h3>
+                        <div class="route-meta">
+                            <span>6 Days</span>
+                            <span>Easy-Moderate</span>
+                            <span>Success Rate: 90%</span>
+                            <span>All Year</span>
+                            <span>Mountain Huts</span>
+                        </div>
+                        <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lemosho Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Lemosho Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 95%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Best Acclimatization</span>
+                        </div>
+                        <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,450</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lemosho Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Lemosho Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 98%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Optimal Acclimatization</span>
+                        </div>
+                        <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,750</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rongai Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Rongai Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 90%</span>
+                            <span>Nov-Mar</span>
+                            <span>Less Crowded</span>
+                        </div>
+                        <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,250</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rongai Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Rongai Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 93%</span>
+                            <span>Nov-Mar</span>
+                            <span>Less Crowded</span>
+                        </div>
+                        <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,550</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shira Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 92%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Remote Experience</span>
+                        </div>
+                        <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,350</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shira Route (8 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (8 Days)</h3>
+                        <div class="route-meta">
+                            <span>8 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 95%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Remote Experience</span>
+                        </div>
+                        <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,650</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Umbwe Route (7 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?umbwe" alt="Umbwe Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Umbwe Route (7 Days)</h3>
+                        <div class="route-meta">
+                            <span>7 Days</span>
+                            <span>Challenging</span>
+                            <span>Success Rate: 85%</span>
+                            <span>Jun-Oct, Dec-Feb</span>
+                            <span>Experienced Trekkers</span>
+                        </div>
+                        <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,050</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Northern Circuit (9 Days) -->
+            <div class="route-card">
+                <img src="https://source.unsplash.com/random/300x300?northern-circuit" alt="Northern Circuit" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Northern Circuit (9 Days)</h3>
+                        <div class="route-meta">
+                            <span>9 Days</span>
+                            <span>Moderate</span>
+                            <span>Success Rate: 98%</span>
+                            <span>Jun-Oct</span>
+                            <span>Most Scenic</span>
+                        </div>
+                        <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,850</p>
+                        <div class="route-buttons">
+                            <a href="#" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faqs">
+        <h2>Trekking FAQs</h2>
+        <p>Answers to common questions about our mountain adventures</p>
+        <div class="faq-item">
+            <h3>How difficult are these climbs and how should I prepare?</h3>
+            <p><strong>Kilimanjaro:</strong> Moderate difficulty but requires endurance. Train with 4-6 hour hikes carrying 5kg pack for 2+ months.</p>
+            <p><strong>Mount Meru:</strong> Good for intermediates. Focus on stair climbing and leg strength.</p>
+            <p><strong>Oldonyo Lengai:</strong> Technically challenging - requires scrambling experience. Train on steep, uneven terrain.</p>
+            <p>All climbs benefit from cardiovascular training and altitude hikes if possible.</p>
+        </div>
+        <div class="faq-item">
+            <h3>When is the best time to climb each mountain?</h3>
+            <p><strong>Kilimanjaro:</strong> Jan-Mar & Jun-Oct (Dry seasons). July-Sept busiest.</p>
+            <p><strong>Mount Meru:</strong> Jun-Feb (Avoid heavy rains Apr-May). Dec-Feb clearest views.</p>
+            <p><strong>Oldonyo Lengai:</strong> Jun-Oct (Coolest months). Night climbs year-round.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do you handle altitude sickness?</h3>
+            <p>Our protocols exceed industry standards: Daily health checks with pulse oximeters, "Pole pole" (slow) pace for proper acclimatization, Extra acclimatization days on Kilimanjaro routes, Emergency oxygen and Gamow bags on all climbs, Immediate descent protocol for severe AMS. Note: Meru's shorter profile makes AMS less common than Kilimanjaro.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What gear do you provide and what should I bring?</h3>
+            <p><strong>We Provide:</strong> 4-season mountain tents, Sleeping mats, Dining tent & camp chairs, Emergency oxygen, All cooking equipment.</p>
+            <p><strong>You Should Bring:</strong> Quality sleeping bag (-10°C rating), Layered clothing system, Sturdy broken-in boots, Headlamp (extra batteries), Trekking poles (highly recommended).</p>
+            <p>Complete packing lists provided after booking.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are your safety records and guide qualifications?</h3>
+            <p><strong>100% Safety Record, 10+ Years Average Guide Experience, 24/7 Ground Support.</strong></p>
+            <p>All guides are certified in: Wilderness First Responder (WFR) training, Altitude sickness recognition and treatment, KPAP certified (Kilimanjaro only), English fluency + local language expertise.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Why do trekking costs vary so much between operators?</h3>
+            <p><strong>Key factors affecting price:</strong></p>
+            <p>Budget Operators: 4:1 client-to-guide ratio, Basic meals, Shared equipment, Minimal safety equipment.</p>
+            <p>Premium Operators: 2:1 client-to-guide ratio, Chef-prepared meals, High-end private gear, Full emergency systems.</p>
+            <p>We're transparent about what's included - no hidden porters or national park fees.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What cultural considerations should I know about?</h3>
+            <p><strong>On the Mountain:</strong> Always greet crew with "Jambo" or "Mambo", Ask permission before photographing staff, Tip guides/porters collectively (we provide guidelines).</p>
+            <p><strong>Oldonyo Lengai Specific:</strong> Sacred to Maasai - follow guide's instructions carefully, No removing rocks or natural items, Special ceremonies may occur - observe respectfully.</p>
+        </div>
+    </section>
+
+    <section class="plan-adventure">
+        <h2>Plan Your Adventure</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Your Adventure Plans" rows="5" required></textarea>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Don Odyssey Safaris. All Rights Reserved.</p>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#">Home</a> | <a href="#">Kilimanjaro</a> | <a href="#">Safari</a> | <a href="#">Zanzibar</a> | <a href="#">About Us</a> | <a href="#">Contact</a>
+        </div>
+        <div>
+            <h4>Contact Us</h4>
+            <p>123 Safari Road, Arusha, Tanzania</p>
+            <p>+255 123 456 789</p>
+            <p>info@donodysseysafaris.com</p>
+        </div>
+    </footer>
+</body>
+</html>
