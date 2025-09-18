@@ -9,6 +9,201 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Mount Meru Routes Section Styles */
+        .meru-routes-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .meru-routes-section h2 {
+            color: #054422;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .meru-routes-section > p {
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .meru-routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .meru-route-card {
+            position: relative;
+            min-height: 380px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meru-route-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .meru-route-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s ease;
+            z-index: 1;
+        }
+
+        .meru-route-card:hover .meru-route-bg {
+            transform: scale(1.05);
+        }
+
+        .meru-route-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
+            z-index: 2;
+        }
+
+        .meru-route-content {
+            position: relative;
+            z-index: 3;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            height: 100%;
+        }
+
+        .meru-route-content h3 {
+            margin: 0 0 1rem;
+            font-size: 1.6rem;
+            color: white;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .meru-route-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        .meru-route-meta span {
+            background: rgba(234, 148, 35, 0.85);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            color: white;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .meru-route-description {
+            font-size: 0.95rem;
+            margin: 0 0 1.5rem;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .meru-route-price {
+            font-size: 1.4rem;
+            color: #ea9423;
+            font-weight: bold;
+            margin: 0 0 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+
+        .meru-route-buttons {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .meru-route-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 0.7rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .meru-route-buttons .details {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .meru-route-buttons .inquire {
+            background: #ea9423;
+            color: white;
+            border: none;
+        }
+
+        .meru-route-buttons a:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .meru-routes-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .meru-route-card {
+                min-height: 350px;
+            }
+            
+            .meru-route-content {
+                padding: 1.5rem;
+            }
+            
+            .meru-route-content h3 {
+                font-size: 1.4rem;
+            }
+            
+            .meru-route-meta span {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.7rem;
+            }
+            
+            .meru-route-description {
+                font-size: 0.9rem;
+            }
+            
+            .meru-route-price {
+                font-size: 1.3rem;
+            }
+            
+            .meru-route-buttons a {
+                font-size: 0.85rem;
+                padding: 0.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -86,285 +281,206 @@
     <div class="overlay"></div>
     
     <main>
-        <!-- Hero Section -->
-        <section class="hero hero-meru">
-            <div class="hero-overlay">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>Mount Meru Climbing Adventures</h1>
-                        <p class="lead">Tanzania's spectacular second peak with stunning views and wildlife encounters</p>
-                        <div class="hero-buttons">
-                            <a href="#itinerary" class="btn btn-primary">View Itinerary</a>
-                            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Your Climb</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Package Overview -->
-        <section class="section-padding">
+       <!-- Hero Section -->
+       <section class="hero hero-meru">
+        <div class="hero-overlay">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="section-header text-start">
-                            <h2>Mount Meru Experience</h2>
-                            <div class="package-highlights">
-                                <span><i class="fas fa-clock"></i> 3-4 Days</span>
-                                <span><i class="fas fa-mountain"></i> 4,562m</span>
-                                <span><i class="fas fa-star"></i> 85% Success Rate</span>
+                <div class="hero-content">
+                    <h1>Mount Meru Climbing Adventures</h1>
+                    <p class="lead">Tanzania's spectacular second peak with stunning views and wildlife encounters</p>
+                    <div class="hero-buttons">
+                        <a href="#itinerary" class="btn btn-primary">View Itinerary</a>
+                        <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Your Climb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section-header text-start">
+                        <h2>Mount Meru Experience</h2>
+                        <div class="package-highlights">
+                            <span><i class="fas fa-clock"></i> 3-4 Days</span>
+                            <span><i class="fas fa-mountain"></i> 4,562m</span>
+                            <span><i class="fas fa-star"></i> 85% Success Rate</span>
+                        </div>
+                    </div>
+                    <p>At 4,562 meters (14,968 feet), Mount Meru is Tanzania's second highest peak and an excellent preparation climb for Kilimanjaro. Located in Arusha National Park, it offers stunning views of Kilimanjaro and unique wildlife encounters during the ascent.</p>
+                    
+                    <div class="difficulty-meter">
+                        <h5>Difficulty Level:</h5>
+                        <div class="difficulty-level">
+                            <div class="difficulty-progress" style="width: 65%"></div>
+                        </div>
+                        <div class="difficulty-labels">
+                            <span>Easy</span>
+                            <span>Moderate</span>
+                            <span>Challenging</span>
+                            <span>Strenuous</span>
+                        </div>
+                    </div>
+                    
+                    <div class="package-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h5>Location</h5>
+                                <p>Arusha National Park, northern Tanzania</p>
                             </div>
                         </div>
-                        <p>At 4,562 meters (14,968 feet), Mount Meru is Tanzania's second highest peak and an excellent preparation climb for Kilimanjaro. Located in Arusha National Park, it offers stunning views of Kilimanjaro and unique wildlife encounters during the ascent.</p>
-                        
-                        <div class="difficulty-meter">
-                            <h5>Difficulty Level:</h5>
-                            <div class="difficulty-level">
-                                <div class="difficulty-progress" style="width: 65%"></div>
-                            </div>
-                            <div class="difficulty-labels">
-                                <span>Easy</span>
-                                <span>Moderate</span>
-                                <span>Challenging</span>
-                                <span>Strenuous</span>
+                        <div class="detail-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h5>Best Time to Climb</h5>
+                                <p>June-February (avoid heavy rains in April-May)</p>
                             </div>
                         </div>
-                        
-                        <div class="package-details">
-                            <div class="detail-item">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <div>
-                                    <h5>Location</h5>
-                                    <p>Arusha National Park, northern Tanzania</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <div>
-                                    <h5>Best Time to Climb</h5>
-                                    <p>June-February (avoid heavy rains in April-May)</p>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-binoculars"></i>
-                                <div>
-                                    <h5>Wildlife</h5>
-                                    <p>Possible sightings of buffalo, giraffe, and antelope</p>
-                                </div>
+                        <div class="detail-item">
+                            <i class="fas fa-binoculars"></i>
+                            <div>
+                                <h5>Wildlife</h5>
+                                <p>Possible sightings of buffalo, giraffe, and antelope</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="package-gallery">
-                            <img src="images/meru-detail-1.jpg" alt="Mount Meru summit view" class="img-fluid rounded" loading="lazy">
-                            <div class="row">
-                                <div class="col-6">
-                                    <img src="images/meru-detail-2.jpg" alt="Meru wildlife" class="img-fluid rounded" loading="lazy">
-                                </div>
-                                <div class="col-6">
-                                    <img src="images/meru-detail-3.jpg" alt="Meru climbers" class="img-fluid rounded" loading="lazy">
-                                </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="package-gallery">
+                        <img src="images/meru-detail-1.jpg" alt="Mount Meru summit view" class="img-fluid rounded" loading="lazy">
+                        <div class="row">
+                            <div class="col-6">
+                                <img src="images/meru-detail-2.jpg" alt="Meru wildlife" class="img-fluid rounded" loading="lazy">
+                            </div>
+                            <div class="col-6">
+                                <img src="images/meru-detail-3.jpg" alt="Meru climbers" class="img-fluid rounded" loading="lazy">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Why Choose Us -->
-        <section class="section-padding bg-light">
+    <!-- Why Choose Us -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Climb Meru With Us</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <i class="fas fa-hiking"></i>
+                        <h4>Kilimanjaro Prep</h4>
+                        <p>Perfect acclimatization climb with similar terrain but shorter duration than Kili.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <i class="fas fa-camera"></i>
+                        <h4>Wildlife Views</h4>
+                        <p>Unique opportunity to see wildlife while mountain climbing in Africa.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <i class="fas fa-users"></i>
+                        <h4>Less Crowded</h4>
+                        <p>Far fewer climbers than Kilimanjaro for a more peaceful experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-box">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h4>Great Value</h4>
+                        <p>More affordable than Kilimanjaro with spectacular views.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
+        <!-- Redesigned Mount Meru Climbing Routes Section -->
+        <section id="routes" class="meru-routes-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Why Climb Meru With Us</h2>
+                    <h2>Mount Meru Climbing Routes</h2>
+                    <p>Choose your path to Tanzania's second highest peak</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="feature-box">
-                            <i class="fas fa-hiking"></i>
-                            <h4>Kilimanjaro Prep</h4>
-                            <p>Perfect acclimatization climb with similar terrain but shorter duration than Kili.</p>
+
+                <div class="meru-routes-grid">
+                    
+                    <!-- Momella Route -->
+                    <div class="meru-route-card">
+                        <div class="meru-route-bg" style="background-image: url('images/meru-standard.jpg')"></div>
+                        <div class="meru-route-overlay"></div>
+                        <div class="meru-route-content">
+                            <h3>Momella Route</h3>
+                            <div class="meru-route-meta">
+                                <span>4 Days</span>
+                                <span>Moderate</span>
+                                <span>Wildlife Viewing</span>
+                            </div>
+                            <p class="meru-route-description">The standard route up Meru through lush forest and alpine meadows with wildlife sightings.</p>
+                            <p class="meru-route-price">From $1,200</p>
+                            <div class="meru-route-buttons">
+                                <a href="4-day-meru.html" class="details">View Itinerary</a>
+                               
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="feature-box">
-                            <i class="fas fa-camera"></i>
-                            <h4>Wildlife Views</h4>
-                            <p>Unique opportunity to see wildlife while mountain climbing in Africa.</p>
+
+                    <!-- Summit Direct Route -->
+                    <div class="meru-route-card">
+                        <div class="meru-route-bg" style="background-image: url('images/meru-fast.jpg')"></div>
+                        <div class="meru-route-overlay"></div>
+                        <div class="meru-route-content">
+                            <h3>Summit Direct Route</h3>
+                            <div class="meru-route-meta">
+                                <span>3 Days</span>
+                                <span>Challenging</span>
+                                <span>Fast Ascent</span>
+                            </div>
+                            <p class="meru-route-description">Fast-paced ascent for experienced trekkers with spectacular sunrise views from the summit.</p>
+                            <p class="meru-route-price">From $950</p>
+                            <div class="meru-route-buttons">
+                                <a href="4-day-meru.html" class="details">View Itinerary</a>
+                               
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="feature-box">
-                            <i class="fas fa-users"></i>
-                            <h4>Less Crowded</h4>
-                            <p>Far fewer climbers than Kilimanjaro for a more peaceful experience.</p>
+
+                    <!-- Wildlife Experience Route -->
+                    <div class="meru-route-card">
+                        <div class="meru-route-bg" style="background-image: url('https://source.unsplash.com/random/600x600?meru-wildlife')"></div>
+                        <div class="meru-route-overlay"></div>
+                        <div class="meru-route-content">
+                            <h3>Wildlife Experience Route</h3>
+                            <div class="meru-route-meta">
+                                <span>5 Days</span>
+                                <span>Moderate</span>
+                                <span>Extended Safari</span>
+                            </div>
+                            <p class="meru-route-description">Extended trek with additional wildlife viewing opportunities in Arusha National Park.</p>
+                            <p class="meru-route-price">From $1,450</p>
+                            <div class="meru-route-buttons">
+                                <a href="4-day-meru.html" class="details">View Itinerary</a>
+                               
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="feature-box">
-                            <i class="fas fa-money-bill-wave"></i>
-                            <h4>Great Value</h4>
-                            <p>More affordable than Kilimanjaro with spectacular views.</p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>
 
-       <!-- Add this after "Why Choose Us" section -->
-<section class="section-padding" id="routes">
-    <div class="container">
-        <div class="section-header">
-            <h2>Mount Meru Climbing Routes</h2>
-            <p>Choose your path to Tanzania's second highest peak</p>
-        </div>
-        
-        <!--<div class="route-nav">
-            <a href="#momella-itinerary" class="route-nav-btn">Momella Route</a>
-            <a href="#summit-itinerary" class="route-nav-btn">Summit Direct</a>
-        </div>-->
-        
-        <div class="row routes-container">
-            <!-- Momella Route -->
-            <div class="col-md-6">
-                <div class="card route-card">
-                    <img src="images/meru-standard.jpg" class="card-img-top" alt="Meru Standard Climb" loading="lazy">
-                    <div class="card-body">
-                        <h3 class="card-title">Momella Route</h3>
-                        <p class="card-subtitle">4 Days • Difficulty: Moderate</p>
-                        <p class="card-text">The standard route up Meru through lush forest and alpine meadows with wildlife sightings.</p>
-                        <div class="route-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-mountain"></i>
-                                <span>Success Rate: 90%</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Best Time: Jun-Feb</span>
-                            </div>
-                        </div>
-                        <a href="4-day-meru.html" class="btn btn-outline-primary w-100 mt-3">View Itinerary</a>
-                    </div>
-                </div>
-            </div>
             
-            <!-- Summit Direct Route -->
-            <div class="col-md-6">
-                <div class="card route-card">
-                    <img src="images/meru-fast.jpg" class="card-img-top" alt="Meru Fast Ascent" loading="lazy">
-                    <div class="card-body">
-                        <h3 class="card-title">Summit Direct Route</h3>
-                        <p class="card-subtitle">5 Days • Difficulty: Moderate</p>
-                        <p class="card-text">Fast-paced ascent for experienced trekkers with spectacular sunrise views from the summit.</p>
-                        <div class="route-stats">
-                            <div class="stat-item">
-                                <i class="fas fa-mountain"></i>
-                                <span>Success Rate: 95%</span>
-                            </div>
-                            <div class="stat-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Best Time: Dec-Feb</span>
-                            </div>
-                        </div>
-                        <a href="5-day-meru.html" class="btn btn-outline-primary w-100 mt-3">View Itinerary</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Itineraries Section
-<section class="section-padding bg-light" id="itineraries">
-    <div class="container">
-        <!-- Momella Route Itinerary 
-        <div class="route-itinerary" id="momella-itinerary">
-            <div class="itinerary-header">
-                <h2>Momella Route Itinerary</h2>
-                <p>4-day standard ascent with wildlife viewing</p>
-            </div>
-            <div class="itinerary-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-day">1</div>
-                    <div class="timeline-content">
-                        <h3>Momella Gate to Miriakamba Hut</h3>
-                        <p><strong>Elevation:</strong> 1,500m to 2,500m<br>
-                        <strong>Hike Time:</strong> 4-6 hours<br>
-                        <strong>Habitat:</strong> Montane Forest<br><br>
-                        After registration, hike through forest where you might see buffalo, giraffe and antelope.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">2</div>
-                    <div class="timeline-content">
-                        <h3>Miriakamba Hut to Saddle Hut</h3>
-                        <p><strong>Elevation:</strong> 2,500m to 3,570m<br>
-                        <strong>Hike Time:</strong> 3-5 hours<br>
-                        <strong>Habitat:</strong> Moorland<br><br>
-                        Steeper ascent through open moorland to Saddle Hut below Little Meru.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">3</div>
-                    <div class="timeline-content">
-                        <h3>Summit Day: Socialist Peak</h3>
-                        <p><strong>Elevation:</strong> 3,570m to 4,562m (then descend to 2,500m)<br>
-                        <strong>Hike Time:</strong> 10-12 hours<br>
-                        <strong>Habitat:</strong> Alpine Desert to Summit<br><br>
-                        Early morning start for sunrise summit. Spectacular views of Kilimanjaro.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">4</div>
-                    <div class="timeline-content">
-                        <h3>Miriakamba Hut to Momella Gate</h3>
-                        <p><strong>Elevation:</strong> 2,500m to 1,500m<br>
-                        <strong>Hike Time:</strong> 2-3 hours<br><br>
-                        Gradual descent through different vegetation zones. Return to Arusha.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Summit Direct Itinerary 
-        <div class="route-itinerary" id="summit-itinerary">
-            <div class="itinerary-header">
-                <h2>Summit Direct Itinerary</h2>
-                <p>3-day fast ascent for experienced climbers</p>
-            </div>
-            <div class="itinerary-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-day">1</div>
-                    <div class="timeline-content">
-                        <h3>Momella Gate to Saddle Hut</h3>
-                        <p><strong>Elevation:</strong> 1,500m to 3,570m<br>
-                        <strong>Hike Time:</strong> 6-8 hours<br>
-                        <strong>Habitat:</strong> Forest to Moorland<br><br>
-                        Long day ascending directly to Saddle Hut with minimal stops.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">2</div>
-                    <div class="timeline-content">
-                        <h3>Summit Day: Socialist Peak</h3>
-                        <p><strong>Elevation:</strong> 3,570m to 4,562m (then descend to 2,500m)<br>
-                        <strong>Hike Time:</strong> 10-12 hours<br><br>
-                        Early morning summit push, then descend to Miriakamba Hut.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">3</div>
-                    <div class="timeline-content">
-                        <h3>Miriakamba Hut to Momella Gate</h3>
-                        <p><strong>Elevation:</strong> 2,500m to 1,500m<br>
-                        <strong>Hike Time:</strong> 2-3 hours<br><br>
-                        Final descent through forest to gate.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>-->
-        
     <!-- ========== COMBINED FAQ SECTION ========== -->
 <section class="section-padding bg-light">
     <div class="container">
@@ -577,7 +693,6 @@
         </div>
     </div>
 </section>
-        
     </main>
 
     <footer>
