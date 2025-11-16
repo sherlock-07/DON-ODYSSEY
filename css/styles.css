@@ -2101,6 +2101,7 @@ footer {
     }*/
     
     .logo-img {
+        display: none;
         height: 40px;
     }
     
