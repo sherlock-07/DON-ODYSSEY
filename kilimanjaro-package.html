@@ -12,9 +12,9 @@
     <style>
         /* Additional styles for the packages page */
         .packages-hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/kilimanjaro-packages-hero.jpg') no-repeat center center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/6.webp') no-repeat center center;
             background-size: cover;
-            padding: 100px 0 60px; /*120px 0 80px;*/
+            padding: 200px 0 180px; /*120px 0 80px;*/
             color: white;
             text-align: center;
         }
@@ -209,8 +209,8 @@
 
         .routes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .route-card {
@@ -292,16 +292,34 @@
             white-space: nowrap;
         }
 
+        /*.route-description {
+            font-size: 0.85rem;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            color: #fff;
+        }*/
+
+                   
         .route-description {
             font-size: 0.85rem;
             margin: 0.5rem 0;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             color: #fff;
-        }
+            /* Center alignment */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%; /* Ensure it takes full height of parent */
+}
 
         .route-price {
             font-size: 1rem;
@@ -341,41 +359,46 @@
         }
 
         @media (max-width: 768px) {
+           
+            .routes-section {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
             .routes-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
+            
             .route-card {
                 min-height: 280px;
+                margin: 0 10px; /* Added margin for better spacing */
             }
-
+            
             .route-content h3 {
                 font-size: 1.1rem;
             }
-
+            
             .route-meta span {
                 font-size: 0.7rem;
                 padding: 0.2rem 0.5rem;
             }
-
+            
             .route-description {
                 font-size: 0.8rem;
                 -webkit-line-clamp: 2;
             }
-
+            
             .route-price {
                 font-size: 0.9rem;
             }
-
+            
             .route-buttons a {
                 font-size: 0.75rem;
                 padding: 0.3rem;
             }
         }
+                
         
           
         @media (max-width: 768px) {
@@ -592,18 +615,12 @@
         <div class="routes-grid">
             <!-- Machame Route (6 Days) -->
             <div class="route-card">
-                <img src="images/DON.jpg" alt="Machame Route" class="route-image">
+                <img src="images/14.webp" alt="Machame Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
                         <h3>Machame Route (6 Days)</h3>
-                        <div class="route-meta">
-                            <span>6 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 92%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Scenic Diversity</span>
-                        </div>
+                        
                         <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
                     </div>
                     <div>
@@ -618,18 +635,12 @@
 
             <!-- Marangu Route (5 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <img src="images/15.webp" alt="Marangu Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
                         <h3>Marangu Route (5 Days)</h3>
-                        <div class="route-meta">
-                            <span>5 Days</span>
-                            <span>Easy-Moderate</span>
-                            <span>Success Rate: 85%</span>
-                            <span>All Year</span>
-                            <span>Mountain Huts</span>
-                        </div>
+                       
                         <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
                     </div>
                     <div>
@@ -642,52 +653,41 @@
                 </div>
             </div>
 
-            <!-- Machame Route (7 Days) -->
+             <!-- Northern Circuit (9 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?machame" alt="Machame Route" class="route-image">
+                <img src="images/25.webp" alt="Northern Circuit" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
-                        <h3>Machame Route (7 Days)</h3>
-                        <div class="route-meta">
-                            <span>7 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 92%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Scenic Diversity</span>
-                        </div>
-                        <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                        <h3>Northern Circuit (9 Days)</h3>
+                        
+                        <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
                     </div>
                     <div>
-                        <p class="route-price">From $2,150</p>
+                        <p class="route-price">From $2,850</p>
                         <div class="route-buttons">
-                            <a href="7-day-machame.html" class="details">View Itinerary</a>
+                            <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
                           
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Marangu Route (6 Days) -->
+           
+             <!-- Umbwe Route (7 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?marangu" alt="Marangu Route" class="route-image">
+                <img src="images/26.webp" alt="Umbwe Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
-                        <h3>Marangu Route (6 Days)</h3>
-                        <div class="route-meta">
-                            <span>6 Days</span>
-                            <span>Easy-Moderate</span>
-                            <span>Success Rate: 90%</span>
-                            <span>All Year</span>
-                            <span>Mountain Huts</span>
-                        </div>
-                        <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                        <h3>Umbwe Route (7 Days)</h3>
+                        
+                        <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
                     </div>
                     <div>
-                        <p class="route-price">From $2,150</p>
+                        <p class="route-price">From $2,050</p>
                         <div class="route-buttons">
-                            <a href="6-day-marangu.html" class="details">View Itinerary</a>
+                            <a href="7-day-umbwe.html" class="details">View Itinerary</a>
                           
                         </div>
                     </div>
@@ -696,18 +696,12 @@
 
             <!-- Lemosho Route (7 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <img src="images/19.webp" alt="Lemosho Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
                         <h3>Lemosho Route (7 Days)</h3>
-                        <div class="route-meta">
-                            <span>7 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 95%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Best Acclimatization</span>
-                        </div>
+                        
                         <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
                     </div>
                     <div>
@@ -720,20 +714,96 @@
                 </div>
             </div>
 
+            <!-- Rongai Route (8 Days) -->
+            <div class="route-card">
+                <img src="images/23.webp" alt="Rongai Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Rongai Route (8 Days)</h3>
+                       
+                        <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,550</p>
+                        <div class="route-buttons">
+                            <a href="8-day-rongai.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Shira Route (8 Days) -->
+            <div class="route-card">
+                <img src="images/27.webp" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (8 Days)</h3>
+                       
+                        <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,650</p>
+                        <div class="route-buttons">
+                            <a href="8-day-shira.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Marangu Route (6 Days) -->
+            <div class="route-card">
+                <img src="images/18.webp" alt="Marangu Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Marangu Route (6 Days)</h3>
+                       
+                        <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,150</p>
+                        <div class="route-buttons">
+                            <a href="6-day-marangu.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shira Route (7 Days) -->
+            <div class="route-card">
+                <img src="images/24.webp" alt="Shira Route" class="route-image">
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <div>
+                        <h3>Shira Route (7 Days)</h3>
+                      
+                        <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    </div>
+                    <div>
+                        <p class="route-price">From $2,350</p>
+                        <div class="route-buttons">
+                            <a href="7-day-shira.html" class="details">View Itinerary</a>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <!-- Lemosho Route (8 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?lemosho" alt="Lemosho Route" class="route-image">
+                <img src="images/20.webp" alt="Lemosho Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
                         <h3>Lemosho Route (8 Days)</h3>
-                        <div class="route-meta">
-                            <span>8 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 98%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Optimal Acclimatization</span>
-                        </div>
+                       
                         <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
                     </div>
                     <div>
@@ -748,18 +818,12 @@
 
             <!-- Rongai Route (7 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <img src="images/22.webp" alt="Rongai Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
                         <h3>Rongai Route (7 Days)</h3>
-                        <div class="route-meta">
-                            <span>7 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 90%</span>
-                            <span>Nov-Mar</span>
-                            <span>Less Crowded</span>
-                        </div>
+                       
                         <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
                     </div>
                     <div>
@@ -772,135 +836,30 @@
                 </div>
             </div>
 
-            <!-- Rongai Route (8 Days) -->
+
+           
+
+             <!-- Machame Route (7 Days) -->
             <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?rongai" alt="Rongai Route" class="route-image">
+                <img src="images/17.webp" alt="Machame Route" class="route-image">
                 <div class="route-overlay"></div>
                 <div class="route-content">
                     <div>
-                        <h3>Rongai Route (8 Days)</h3>
-                        <div class="route-meta">
-                            <span>8 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 93%</span>
-                            <span>Nov-Mar</span>
-                            <span>Less Crowded</span>
-                        </div>
-                        <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                        <h3>Machame Route (7 Days)</h3>
+                       
+                        <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
                     </div>
                     <div>
-                        <p class="route-price">From $2,550</p>
+                        <p class="route-price">From $2,150</p>
                         <div class="route-buttons">
-                            <a href="8-day-rongai.html" class="details">View Itinerary</a>
+                            <a href="7-day-machame.html" class="details">View Itinerary</a>
                           
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Shira Route (7 Days) -->
-            <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
-                <div class="route-overlay"></div>
-                <div class="route-content">
-                    <div>
-                        <h3>Shira Route (7 Days)</h3>
-                        <div class="route-meta">
-                            <span>7 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 92%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Remote Experience</span>
-                        </div>
-                        <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
-                    </div>
-                    <div>
-                        <p class="route-price">From $2,350</p>
-                        <div class="route-buttons">
-                            <a href="7-day-shira.html" class="details">View Itinerary</a>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shira Route (8 Days) -->
-            <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?shira" alt="Shira Route" class="route-image">
-                <div class="route-overlay"></div>
-                <div class="route-content">
-                    <div>
-                        <h3>Shira Route (8 Days)</h3>
-                        <div class="route-meta">
-                            <span>8 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 95%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Remote Experience</span>
-                        </div>
-                        <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
-                    </div>
-                    <div>
-                        <p class="route-price">From $2,650</p>
-                        <div class="route-buttons">
-                            <a href="8-day-shira.html" class="details">View Itinerary</a>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Umbwe Route (7 Days) -->
-            <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?umbwe" alt="Umbwe Route" class="route-image">
-                <div class="route-overlay"></div>
-                <div class="route-content">
-                    <div>
-                        <h3>Umbwe Route (7 Days)</h3>
-                        <div class="route-meta">
-                            <span>7 Days</span>
-                            <span>Challenging</span>
-                            <span>Success Rate: 85%</span>
-                            <span>Jun-Oct, Dec-Feb</span>
-                            <span>Experienced Trekkers</span>
-                        </div>
-                        <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
-                    </div>
-                    <div>
-                        <p class="route-price">From $2,050</p>
-                        <div class="route-buttons">
-                            <a href="7-day-umbwe.html" class="details">View Itinerary</a>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Northern Circuit (9 Days) -->
-            <div class="route-card">
-                <img src="https://source.unsplash.com/random/300x300?northern-circuit" alt="Northern Circuit" class="route-image">
-                <div class="route-overlay"></div>
-                <div class="route-content">
-                    <div>
-                        <h3>Northern Circuit (9 Days)</h3>
-                        <div class="route-meta">
-                            <span>9 Days</span>
-                            <span>Moderate</span>
-                            <span>Success Rate: 98%</span>
-                            <span>Jun-Oct</span>
-                            <span>Most Scenic</span>
-                        </div>
-                        <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
-                    </div>
-                    <div>
-                        <p class="route-price">From $2,850</p>
-                        <div class="route-buttons">
-                            <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </section>
 
