@@ -1842,6 +1842,9 @@ footer {
     font-size: 1.2rem;
 }
 
+.col-md-4 img{ 
+    display: none;
+}
 
 
 /* Responsive adjustments */
