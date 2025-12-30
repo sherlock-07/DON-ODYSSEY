@@ -100,10 +100,11 @@
                 </div>
             </div>
         </section>
-<!-- Replace the current mountain sections in trekking.html with this: -->
+
    
 <section class="section-padding">
-    <div class="container">
+    <div id="routes">
+         <div class="container">
         <div class="section-header">
             <h2>Our Mountain Climbing Packages</h2>
             <p>Choose your perfect Tanzanian mountain adventure</p>
@@ -115,13 +116,13 @@
                     <img src="images/3.webp" class="card-img-top" alt="Kilimanjaro Climbing Package" >
                     <div class="card-body">
                         <h3 class="card-title">Kilimanjaro Climbs</h3>
-                        <div class="package-meta">
+                        <!--<div class="package-meta">
                             <span><i class="fas fa-mountain"></i> 5,895m</span>
                             <span><i class="fas fa-calendar-alt"></i> 5-9 days</span>
                             <span><i class="fas fa-star"></i> 90% Success</span>
-                        </div>
+                        </div>-->
                         <p class="card-text">Conquer Africa's highest peak with our expert guides through scenic routes.</p>
-                        <div class="package-features">
+                        <!--<div class="package-features">
                             <h4>Key Features:</h4>
                             <ul>
                                 <li>Multiple route options</li>
@@ -129,7 +130,7 @@
                                 <li>Medical oxygen included</li>
                                 <li>Pre-climb training</li>
                             </ul>
-                        </div>
+                        </div>-->
                         <a href="kilimanjaro-package.html" class="btn btn-primary w-100 mt-3">View Package Details</a>
                     </div>
                 </div>
@@ -141,13 +142,13 @@
                     <img src="images/10.webp" class="card-img-top" alt="Mount Meru Climbing Package" >
                     <div class="card-body">
                         <h3 class="card-title">Mount Meru Climbs</h3>
-                        <div class="package-meta">
+                        <!--<div class="package-meta">
                             <span><i class="fas fa-mountain"></i> 4,562m</span>
                             <span><i class="fas fa-calendar-alt"></i> 3-4 days</span>
                             <span><i class="fas fa-star"></i> 85% Success</span>
-                        </div>
+                        </div>-->
                         <p class="card-text">Tanzania's second highest peak offering spectacular views and wildlife encounters.</p>
-                        <div class="package-features">
+                        <!--<div class="package-features">
                             <h4>Key Features:</h4>
                             <ul>
                                 <li>Ideal Kilimanjaro warm-up</li>
@@ -155,7 +156,7 @@
                                 <li>Less crowded trails</li>
                                 <li>Affordable option</li>
                             </ul>
-                        </div>
+                        </div>-->
                         <a href="meru-package.html" class="btn btn-primary w-100 mt-3">View Package Details</a>
                     </div>
                 </div>
@@ -167,13 +168,13 @@
                     <img src="images/11.webp" class="card-img-top" alt="Oldoinyo Lengai Climbing Package" >
                     <div class="card-body">
                         <h3 class="card-title">Oldonyo Lengai Climbs</h3>
-                        <div class="package-meta">
+                        <!--<div class="package-meta">
                             <span><i class="fas fa-mountain"></i> 2,962m</span>
                             <span><i class="fas fa-calendar-alt"></i> 1-2 days</span>
                             <span><i class="fas fa-star"></i> 80% Success</span>
-                        </div>
+                        </div>-->
                         <p class="card-text">Africa's only active carbonatite volcano with a thrilling night ascent.</p>
-                        <div class="package-features">
+                        <!--<div class="package-features">
                             <h4>Key Features:</h4>
                             <ul>
                                 <li>Unique night climb</li>
@@ -181,13 +182,15 @@
                                 <li>Combine with Lake Natron</li>
                                 <li>Cultural significance</li>
                             </ul>
-                        </div>
+                        </div>-->
                         <a href="lengai-package.html" class="btn btn-primary w-100 mt-3">View Package Details</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+   
 </section>
 
 
@@ -449,11 +452,12 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- Inquiry Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Plan Your Adventure</h5>
+                    <h5 class="modal-title" id="inquiryModalLabel">Inquire About Mountain Trekking</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -467,11 +471,41 @@
                             <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Your Adventure Plans</label>
-                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                        <div class="mb-3">
+                            <label for="mountain" class="form-label">Select Mountain</label>
+                            <select class="form-select" id="mountain" required>
+                                <option value="">Choose a mountain...</option>
+                                <option value="kilimanjaro">Mount Kilimanjaro</option>
+                                <option value="meru">Mount Meru</option>
+                                <option value="lengai">Oldonyo Lengai</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required>I'm interested in Mountain Trekking. Please send me more information.</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredDate" class="form-label">Preferred Start Date</label>
+                            <input type="date" class="form-control" id="preferredDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="participants" class="form-label">Number of Participants</label>
+                            <select class="form-select" id="participants">
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3-4" selected>3-4 people</option>
+                                <option value="5-6">5-6 people</option>
+                                <option value="7+">7+ people</option>
+                            </select>
+                        </div>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitInquiry">Submit Inquiry</button>
                 </div>
             </div>
         </div>

@@ -386,394 +386,467 @@
     <!-- Price and Inclusions -->
         <section class="section-padding">
             <div class="container">
-                <div class="row">
-                    <!-- Booking Form Sidebar -->
-                    <div class="col-lg-4 order-lg-last order-first">
-                        <div class="booking-card card shadow-sm">
-                            <div class="card-header bg-primary text-white">
-                                <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Book Your Climb</h4>
-                            </div>
-                            <div class="card-body">
-                                <form id="routeBookingForm">
-                                    <div class="mb-3">
-                                        <label for="startDate" class="form-label">Preferred Start Date</label>
-                                        <input type="date" class="form-control" id="startDate" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="groupSize" class="form-label">Number of Climbers</label>
-                                        <select class="form-select" id="groupSize">
-                                            <option value="1">1 person</option>
-                                            <option value="2">2 people</option>
-                                            <option value="3-4" selected>3-4 people</option>
-                                            <option value="5-6">5-6 people</option>
-                                            <option value="7+">7+ people</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Upgrades</label>
-                                        <div class="form-check">
-                                            <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="toiletTentCheckbox" data-upgrade="toiletTent">
-                                            <label class="form-check-label" for="toiletTentCheckbox">
-                                                Private Toilet Tent (+$150)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="extraDayCheckbox" data-upgrade="extraDay">
-                                            <label class="form-check-label" for="extraDayCheckbox">
-                                                Extra Acclimatization Day (+$250)
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input upgrade-checkbox" type="checkbox" value="" id="hotelUpgradeCheckbox" data-upgrade="hotelUpgrade">
-                                            <label class="form-check-label" for="hotelUpgradeCheckbox">
-                                                Luxury Hotel Upgrade (+$200)
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="price-summary mb-3 p-3 bg-light rounded">
-                                        <h6>Estimated Total: <span class="float-end" id="totalPrice">$1,950</span></h6>
-                                        <p class="small text-muted mb-0" id="priceDescription">Per person for 3-4 people group</p>
-                                    </div>
-                                    <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary">
-                                            <i class="fas fa-paper-plane me-2"></i>Request Booking
-                                        </button>
-                                    </div>
-                                </form>
-                                <div class="mt-3 text-dark">
-                                    <p class="small">Have questions? <a href="contact.html">Contact us</a> or call <a href="tel:+255123456789">+255 123 456 789</a></p>
-                                </div>
-                            </div>
+            <div class="row">
+                <!-- Booking Form Sidebar -->
+                <div class="col-lg-4 order-lg-last order-first">
+                <div class="booking-card card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="fas fa-calendar-alt me-2"></i>Book Your Climb</h4>
+                    </div>
+                    <div class="card-body">
+                    <form id="routeBookingForm">
+                        <div class="mb-3">
+                        <label for="startDate" class="form-label">Preferred Start Date</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                        </div>
+                        <div class="mb-3">
+                        <label for="groupSize" class="form-label">Number of Climbers</label>
+                        <select class="form-select" id="groupSize">
+                            <option value="1">1 person</option>
+                            <option value="2">2 people</option>
+                            <option value="3-4" selected>3-4 people</option>
+                            <option value="5-6">5-6 people</option>
+                            <option value="7+">7+ people</option>
+                        </select>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label">Upgrades</label>
+                        <div class="form-check">
+                            <input class="form-check-input upgrade-checkbox" type="checkbox" id="toiletTentCheckbox" data-upgrade="toiletTent" data-price="150">
+                            <label class="form-check-label" for="toiletTentCheckbox">
+                            Private Toilet Tent (+$150)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upgrade-checkbox" type="checkbox" id="extraDayCheckbox" data-upgrade="extraDay" data-price="250">
+                            <label class="form-check-label" for="extraDayCheckbox">
+                            Extra Acclimatization Day (+$250)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input upgrade-checkbox" type="checkbox" id="hotelUpgradeCheckbox" data-upgrade="hotelUpgrade" data-price="200">
+                            <label class="form-check-label" for="hotelUpgradeCheckbox">
+                            Luxury Hotel Upgrade (+$200)
+                            </label>
+                        </div>
+                        </div>
+                        <div class="price-summary mb-3 p-3 bg-light rounded">
+                        <h6>Estimated Total: <span class="float-end" id="totalPrice">$1,950</span></h6>
+                        <p class="small text-muted mb-0" id="priceDescription">Per person for 3-4 people group</p>
+                        </div>
+                        <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Request Booking
+                        </button>
+                        </div>
+                    </form>
+                    <div class="mt-3 text-dark">
+                        <p class="small">Have questions? <a href="contact.html">Contact us</a> or call <a href="tel:+255123456789">+255 123 456 789</a></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Main Content Area -->
+                <div class="col-lg-8 order-lg-first order-last">
+                <h2 class="mb-4">Price & Inclusions</h2>
+                
+                <!-- Mobile Card View (visible on small screens) -->
+                <div class="d-block d-lg-none mb-4">
+                    <div class="pricing-cards">
+                    <div class="pricing-card card mb-3" data-group="1" data-price="2450">
+                        <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">1 Person <span class="badge bg-light text-dark">Private</span></h5>
+                        </div>
+                        <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Price per Person:</strong>
+                            <span class="price">$2,450</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Price:</strong>
+                            <span>$2,450</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Success Rate:</strong>
+                            <span><i class="fas fa-star text-warning"></i> 80%</span>
+                        </div>
+                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$2,450</div>
+                        <div class="mobile-group-display small text-muted text-center">For 1 person</div>
+                        <button type="button" class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="1">Book Now</button>
                         </div>
                     </div>
                     
-                    <!-- Main Content Area -->
-                    <div class="col-lg-8 order-lg-first order-last">
-                        <h2 class="mb-4">Price & Inclusions</h2>
-                        
-                        <!-- Mobile Card View (visible on small screens) -->
-                        <div class="d-block d-lg-none mb-4">
-                            <div class="pricing-cards">
-                                <div class="pricing-card card mb-3">
-                                    <div class="card-header bg-dark text-white">
-                                        <h5 class="mb-0">1 Person <span class="badge bg-light text-dark">Private</span></h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Price per Person:</strong>
-                                            <span class="price">$2,450</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Total Price:</strong>
-                                            <span>$2,450</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <strong>Success Rate:</strong>
-                                            <span><i class="fas fa-star text-warning"></i> 80%</span>
-                                        </div>
-                                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$2,450</div>
-                                        <div class="mobile-group-display small text-muted text-center">For 1 person</div>
-                                        <button class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="1">Book Now</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="pricing-card card mb-3">
-                                    <div class="card-header bg-dark text-white">
-                                        <h5 class="mb-0">2 People</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Price per Person:</strong>
-                                            <span class="price">$2,050</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Total Price:</strong>
-                                            <span>$4,100</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <strong>Success Rate:</strong>
-                                            <span><i class="fas fa-star text-warning"></i> 82%</span>
-                                        </div>
-                                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$2,050</div>
-                                        <div class="mobile-group-display small text-muted text-center">For 2 people</div>
-                                        <button class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="2">Book Now</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="pricing-card card mb-3 highlighted">
-                                    <div class="card-header bg-primary text-white">
-                                        <h5 class="mb-0">3-4 People <span class="badge bg-warning text-dark">Best Value</span></h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Price per Person:</strong>
-                                            <span class="price">$1,950</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Total Price:</strong>
-                                            <span>$5,850 - $7,800</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <strong>Success Rate:</strong>
-                                            <span><i class="fas fa-star text-warning"></i> 85%</span>
-                                        </div>
-                                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,950</div>
-                                        <div class="mobile-group-display small text-muted text-center">For 3-4 people</div>
-                                        <button class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="3-4">Book Now</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="pricing-card card mb-3">
-                                    <div class="card-header bg-dark text-white">
-                                        <h5 class="mb-0">5-6 People</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Price per Person:</strong>
-                                            <span class="price">$1,850</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Total Price:</strong>
-                                            <span>$9,250 - $11,100</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <strong>Success Rate:</strong>
-                                            <span><i class="fas fa-star text-warning"></i> 87%</span>
-                                        </div>
-                                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,850</div>
-                                        <div class="mobile-group-display small text-muted text-center">For 5-6 people</div>
-                                        <button class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="5-6">Book Now</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="pricing-card card mb-3">
-                                    <div class="card-header bg-dark text-white">
-                                        <h5 class="mb-0">7+ People</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Price per Person:</strong>
-                                            <span class="price">$1,750</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <strong>Total Price:</strong>
-                                            <span>From $12,250</span>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-3">
-                                            <strong>Success Rate:</strong>
-                                            <span><i class="fas fa-star text-warning"></i> 90%</span>
-                                        </div>
-                                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,750</div>
-                                        <div class="mobile-group-display small text-muted text-center">For 7+ people</div>
-                                        <button class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="7+">Book Now</button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="pricing-note mt-3">
-                                <p class="small text-muted"><i class="fas fa-info-circle me-2"></i>All prices are in USD. Group discounts available for 10+ people.</p>
-                            </div>
+                    <div class="pricing-card card mb-3" data-group="2" data-price="2050">
+                        <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">2 People</h5>
                         </div>
-                        
-                        <!-- Desktop Table View (hidden on mobile) -->
-                        <div class="d-none d-lg-block pricing-table-container mb-5">
-                            <div class="table-responsive">
-                                <table class="table pricing-table">
-                                    <thead class="table-dark">
-                                        <tr>
-                                            <th>Group Size</th>
-                                            <th>Price per Person</th>
-                                            <th>Total Price</th>
-                                            <th>Success Rate</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td style="font-size: smaller;">1 person (Private climb)</td>
-                                            <td class="price">$2,450</td>
-                                            <td>$2,450</td>
-                                            <td>80%</td>
-                                            <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2 people</td>
-                                            <td class="price">$2,050</td>
-                                            <td>$4,100</td>
-                                            <td>82%</td>
-                                            <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
-                                        </tr>
-                                        <tr class="highlighted">
-                                            <td>3-4 people</td>
-                                            <td class="price">$1,950</td>
-                                            <td>$5,850 - $7,800</td>
-                                            <td>85%</td>
-                                            <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>5-6 people</td>
-                                            <td class="price">$1,850</td>
-                                            <td>$9,250 - $11,100</td>
-                                            <td>87%</td>
-                                            <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td>7+ people</td>
-                                            <td class="price">$1,750</td>
-                                            <td>Contact for quote</td>
-                                            <td>90%</td>
-                                            <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="pricing-note mt-3">
-                                <p class="small text-muted"><i class="fas fa-info-circle me-2"></i>All prices are in USD. Group discounts available for 10+ people.</p>
-                            </div>
+                        <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Price per Person:</strong>
+                            <span class="price">$2,050</span>
                         </div>
-                        
-                        <!-- Inclusions Section -->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="inclusion-card card h-100">
-                                    <div class="card-header bg-success text-white">
-                                        <h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>What's Included</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Kilimanjaro National Park fees</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Professional mountain guides & crew</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Porters (carry up to 15kg of your luggage)</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>All meals on the mountain</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Mountain hut accommodations</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Emergency oxygen & first aid kit</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Pre & post climb accommodation</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-check text-success me-2"></i>
-                                                <span>Airport transfers</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="exclusion-card card h-100">
-                                    <div class="card-header bg-secondary text-white">
-                                        <h5 class="mb-0"><i class="fas fa-times-circle me-2"></i>What's Not Included</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>International flights</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Tanzania visa fees</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Travel insurance</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Personal trekking gear</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Tips for guides and porters</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Personal expenses</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Alcoholic beverages</span>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <i class="fas fa-times text-danger me-2"></i>
-                                                <span>Additional nights accommodation</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Price:</strong>
+                            <span>$4,100</span>
                         </div>
-                        
-                        <!-- Upgrade Options -->
-                        <div class="upgrade-options mt-5">
-                            <h3 class="mb-4">Upgrade Your Experience</h3>
-                            <div class="row">
-                                <div class="col-md-4 mb-3">
-                                    <div class="card upgrade-card h-100" data-upgrade="toiletTent">
-                                        <div class="card-body text-center">
-                                            <div class="upgrade-icon mb-3">
-                                                <i class="fas fa-toilet fa-2x text-dark"></i>
-                                            </div>
-                                            <h6>Private Toilet Tent</h6>
-                                            <p class="price text-primary-color">+$150 per person</p>
-                                            <p class="small">Private portable toilet for your comfort</p>
-                                            <button class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
-                                            <button class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card upgrade-card h-100" data-upgrade="extraDay">
-                                        <div class="card-body text-center">
-                                            <div class="upgrade-icon mb-3">
-                                                <i class="fas fa-mountain fa-2x text-dark"></i>
-                                            </div>
-                                            <h6 style="font-size: smaller;">Extra Acclimatization Day</h6>
-                                            <p class="price text-primary-color">+$250 per person</p>
-                                            <p class="small">7-day itinerary for better acclimatization</p>
-                                            <button class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
-                                            <button class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 mb-3">
-                                    <div class="card upgrade-card h-100" data-upgrade="hotelUpgrade">
-                                        <div class="card-body text-center">
-                                            <div class="upgrade-icon mb-3">
-                                                <i class="fas fa-hotel fa-2x text-dark"></i>
-                                            </div>
-                                            <h6>Luxury Hotel Upgrade</h6>
-                                            <p class="price text-primary-color">+$200 per person</p>
-                                            <p class="small">5-star accommodation before and after climb</p>
-                                            <button class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
-                                            <button class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Success Rate:</strong>
+                            <span><i class="fas fa-star text-warning"></i> 82%</span>
+                        </div>
+                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$2,050</div>
+                        <div class="mobile-group-display small text-muted text-center">For 2 people</div>
+                        <button type="button" class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="2">Book Now</button>
                         </div>
                     </div>
+                    
+                    <div class="pricing-card card mb-3 highlighted" data-group="3-4" data-price="1950">
+                        <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">3-4 People <span class="badge bg-warning text-dark">Best Value</span></h5>
+                        </div>
+                        <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Price per Person:</strong>
+                            <span class="price">$1,950</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Price:</strong>
+                            <span>$5,850 - $7,800</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Success Rate:</strong>
+                            <span><i class="fas fa-star text-warning"></i> 85%</span>
+                        </div>
+                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,950</div>
+                        <div class="mobile-group-display small text-muted text-center">For 3-4 people</div>
+                        <button type="button" class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="3-4">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card card mb-3" data-group="5-6" data-price="1850">
+                        <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">5-6 People</h5>
+                        </div>
+                        <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Price per Person:</strong>
+                            <span class="price">$1,850</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Price:</strong>
+                            <span>$9,250 - $11,100</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Success Rate:</strong>
+                            <span><i class="fas fa-star text-warning"></i> 87%</span>
+                        </div>
+                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,850</div>
+                        <div class="mobile-group-display small text-muted text-center">For 5-6 people</div>
+                        <button type="button" class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="5-6">Book Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card card mb-3" data-group="7+" data-price="1750">
+                        <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0">7+ People</h5>
+                        </div>
+                        <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Price per Person:</strong>
+                            <span class="price">$1,750</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <strong>Total Price:</strong>
+                            <span>From $12,250</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Success Rate:</strong>
+                            <span><i class="fas fa-star text-warning"></i> 90%</span>
+                        </div>
+                        <div class="mobile-price-display mt-2 text-center fw-bold text-primary-color">$1,750</div>
+                        <div class="mobile-group-display small text-muted text-center">For 7+ people</div>
+                        <button type="button" class="btn btn-primary btn-sm w-100 mobile-book-btn" data-group-size="7+">Book Now</button>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="pricing-note mt-3">
+                    <p class="small text-muted"><i class="fas fa-info-circle me-2"></i>All prices are in USD. Group discounts available for 10+ people.</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Table View (hidden on mobile) -->
+                <div class="d-none d-lg-block pricing-table-container mb-5">
+                    <div class="table-responsive">
+                    <table class="table pricing-table">
+                        <thead class="table-dark">
+                        <tr>
+                            <th>Group Size</th>
+                            <th>Price per Person</th>
+                            <th>Total Price</th>
+                            <th>Success Rate</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-group="1" data-price="2450">
+                            <td style="font-size: smaller;">1 person (Private climb)</td>
+                            <td class="price">$2,450</td>
+                            <td>$2,450</td>
+                            <td>80%</td>
+                            <td><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
+                        </tr>
+                        <tr data-group="2" data-price="2050">
+                            <td>2 people</td>
+                            <td class="price">$2,050</td>
+                            <td>$4,100</td>
+                            <td>82%</td>
+                            <td><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
+                        </tr>
+                        <tr class="highlighted" data-group="3-4" data-price="1950">
+                            <td>3-4 people</td>
+                            <td class="price">$1,950</td>
+                            <td>$5,850 - $7,800</td>
+                            <td>85%</td>
+                            <td><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
+                        </tr>
+                        <tr data-group="5-6" data-price="1850">
+                            <td>5-6 people</td>
+                            <td class="price">$1,850</td>
+                            <td>$9,250 - $11,100</td>
+                            <td>87%</td>
+                            <td><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
+                        </tr>
+                        <tr data-group="7+" data-price="1750">
+                            <td>7+ people</td>
+                            <td class="price">$1,750</td>
+                            <td>Contact for quote</td>
+                            <td>90%</td>
+                            <td><button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="pricing-note mt-3">
+                    <p class="small text-muted"><i class="fas fa-info-circle me-2"></i>All prices are in USD. Group discounts available for 10+ people.</p>
+                    </div>
+                </div>
+                
+                <!-- Inclusions Section -->
+                <div class="row">
+                    <div class="col-md-6">
+                    <div class="inclusion-card card h-100">
+                        <div class="card-header bg-success text-white">
+                        <h5 class="mb-0"><i class="fas fa-check-circle me-2"></i>What's Included</h5>
+                        </div>
+                        <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Kilimanjaro National Park fees</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Professional mountain guides & crew</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Porters (carry up to 15kg of your luggage)</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>All meals on the mountain</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Mountain hut accommodations</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Emergency oxygen & first aid kit</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Pre & post climb accommodation</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <span>Airport transfers</span>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="exclusion-card card h-100">
+                        <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0"><i class="fas fa-times-circle me-2"></i>What's Not Included</h5>
+                        </div>
+                        <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>International flights</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Tanzania visa fees</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Travel insurance</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Personal trekking gear</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Tips for guides and porters</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Personal expenses</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Alcoholic beverages</span>
+                            </li>
+                            <li class="list-group-item">
+                            <i class="fas fa-times text-danger me-2"></i>
+                            <span>Additional nights accommodation</span>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <!-- Upgrade Options -->
+                <div class="upgrade-options mt-5">
+                    <h3 class="mb-4">Upgrade Your Experience</h3>
+                    <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card upgrade-card h-100" data-upgrade="toiletTentCheckbox" data-price="150">
+                        <div class="card-body text-center">
+                            <div class="upgrade-icon mb-3">
+                            <i class="fas fa-toilet fa-2x text-dark"></i>
+                            </div>
+                            <h6>Private Toilet Tent</h6>
+                            <p class="price text-primary-color">+$150 per person</p>
+                            <p class="small">Private portable toilet for your comfort</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card upgrade-card h-100" data-upgrade="extraDayCheckbox" data-price="250">
+                        <div class="card-body text-center">
+                            <div class="upgrade-icon mb-3">
+                            <i class="fas fa-mountain fa-2x text-dark"></i>
+                            </div>
+                            <h6 style="font-size: smaller;">Extra Acclimatization Day</h6>
+                            <p class="price text-primary-color">+$250 per person</p>
+                            <p class="small">7-day itinerary for better acclimatization</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card upgrade-card h-100" data-upgrade="hotelUpgradeCheckbox" data-price="200">
+                        <div class="card-body text-center">
+                            <div class="upgrade-icon mb-3">
+                            <i class="fas fa-hotel fa-2x text-dark"></i>
+                            </div>
+                            <h6>Luxury Hotel Upgrade</h6>
+                            <p class="price text-primary-color">+$200 per person</p>
+                            <p class="small">5-star accommodation before and after climb</p>
+                            <button type="button" class="btn btn-sm btn-outline-primary add-upgrade-btn">Add to Package</button>
+                            <button type="button" class="btn btn-sm btn-outline-danger remove-upgrade-btn d-none">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
+            </div>
         </section>
+        
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const priceMap = {
+            '1': 2450,
+            '2': 2050,
+            '3-4': 1950,
+            '5-6': 1850,
+            '7+': 1750
+            };
+            
+            const groupSizeSelect = document.getElementById('groupSize');
+            const totalPriceSpan = document.getElementById('totalPrice');
+            const priceDescriptionSpan = document.getElementById('priceDescription');
+            const upgradeCheckboxes = document.querySelectorAll('.upgrade-checkbox');
+            const upgradeCards = document.querySelectorAll('.upgrade-card');
+            const addUpgradeBtns = document.querySelectorAll('.add-upgrade-btn');
+            const removeUpgradeBtns = document.querySelectorAll('.remove-upgrade-btn');
+            
+            function calculatePrice() {
+            const groupSize = groupSizeSelect.value;
+            let basePrice = priceMap[groupSize];
+            let upgradePrice = 0;
+            
+            // Calculate upgrade costs
+            upgradeCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                upgradePrice += parseInt(checkbox.dataset.price);
+                }
+            });
+            
+            const totalPerPerson = basePrice + upgradePrice;
+            totalPriceSpan.textContent = '$' + totalPerPerson.toLocaleString();
+            priceDescriptionSpan.textContent = 'Per person for ' + groupSize + ' people group';
+            }
+            
+            // Update price when group size changes
+            groupSizeSelect.addEventListener('change', calculatePrice);
+            
+            // Update price when checkboxes change
+            upgradeCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', calculatePrice);
+            });
+            
+            // Add upgrade button functionality
+            addUpgradeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const upgradeCard = this.closest('.upgrade-card');
+                const upgradeType = upgradeCard.dataset.upgrade;
+                const checkbox = document.getElementById(upgradeType);
+                
+                checkbox.checked = true;
+                this.classList.add('d-none');
+                upgradeCard.querySelector('.remove-upgrade-btn').classList.remove('d-none');
+                calculatePrice();
+            });
+            });
+            
+            // Remove upgrade button functionality
+            removeUpgradeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const upgradeCard = this.closest('.upgrade-card');
+                const upgradeType = upgradeCard.dataset.upgrade;
+                const checkbox = document.getElementById(upgradeType);
+                
+                checkbox.checked = false;
+                this.classList.add('d-none');
+                upgradeCard.querySelector('.add-upgrade-btn').classList.remove('d-none');
+                calculatePrice();
+            });
+            });
+        });
+        </script>
 
         <!-- Why Choose Us -->
         <section class="section-padding bg-light">
@@ -870,11 +943,107 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <!-- Same as Machame page -->
+     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/donald logo-02.jpg" alt="Don Odyssey Safaris Logo" class="logo-img mb-3">
+                    </a>
+                    <p>Experience the adventure of a lifetime with Don Odyssey Safaris. From majestic mountain treks to breathtaking wildlife safaris, we create unforgettable journeys across Tanzania.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="trekking.html">Trekking</a></li>
+                        <li><a href="safari.html">Safari</a></li>
+                        <li><a href="zanzibar.html">Zanzibar</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3>Popular Treks</h3>
+                    <ul>
+                        <li><a href="kilimanjaro-machame.html">Machame Route</a></li>
+                        <li><a href="kilimanjaro-lemosho.html">Lemosho Route</a></li>
+                        <li><a href="mount-meru-5day.html">Mount Meru 5-Day</a></li>
+                        <li><a href="mount-meru-4day.html">Mount Meru 4-Day</a></li>
+                        <li><a href="ol-doinyo-lengai.html">Ol Doinyo Lengai</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Arusha, Tanzania</p>
+                        <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@donodysseysafaris.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Don Odyssey Safaris. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Inquiry Modal -->
-    <!-- Same as Machame page -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="inquiryModalLabel">Inquire Mount Kilimanjaro Machame Route 6-Day Trek</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="inquiryForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required>I'm interested in the Mount Kilimanjaro Machame Route 6-Day Trek. Please send me more information.</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredDate" class="form-label">Preferred Start Date</label>
+                            <input type="date" class="form-control" id="preferredDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="participants" class="form-label">Number of Participants</label>
+                            <select class="form-select" id="participants">
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3-4" selected>3-4 people</option>
+                                <option value="5-6">5-6 people</option>
+                                <option value="7+">7+ people</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitInquiry">Submit Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>

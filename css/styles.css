@@ -423,13 +423,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tour-card .card-title {
-    color: var(--primary-color);
+    color: var(--text-light);
     font-weight: 600;
     margin-bottom: 15px;
 }
 
 .tour-card .card-text {
-    color: #666;
+    color: var(--text-light);
     margin-bottom: 20px;
 }
 
@@ -1458,6 +1458,10 @@ h1, h2, h3, h4, h5, h6 {
     }
     .itinerary-accordion .row{
         padding: 20px;
+    }
+  
+    .btn-secondary {
+    display: none;
     }
 }
 

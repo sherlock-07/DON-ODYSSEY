@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
     // Upgrade card buttons
     const addUpgradeButtons = document.querySelectorAll('.add-upgrade-btn');
     addUpgradeButtons.forEach(button => {
@@ -438,3 +439,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// ========== SET MINIMUM DATE FOR ALL DATE INPUTS ==========
+// This function runs immediately and sets today's date as minimum for all date inputs
+function initializeDateInputs() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const minDate = `${year}-${month}-${day}`;
+    
+    // Select ALL date inputs on the page
+    const dateInputs = document.querySelectorAll('input[type="date"]');
+    
+    // Apply minimum date to each input
+    dateInputs.forEach(input => {
+        input.setAttribute('min', minDate);
+    });
+}
+
+// Initialize date inputs when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeDateInputs);
+} else {
+    // DOM is already loaded
+    initializeDateInputs();
+}

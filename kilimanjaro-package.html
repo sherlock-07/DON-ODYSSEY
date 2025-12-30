@@ -220,20 +220,20 @@
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
-           
             display: flex;
             flex-direction: column;
         }
 
         .route-card:hover {
-            transform: translateY(-5px); /*translateY(-10px);*/
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);/*0 15px 30px rgba(0,0,0,0.15);*/
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
-        .route-image {
+        .route-bg {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            background-size: cover;
+            background-position: center;
             position: absolute;
             top: 0;
             left: 0;
@@ -241,12 +241,10 @@
             transition: transform 0.5s ease;
         }
 
-    
-        .route-card:hover .route-image {
+        .route-card:hover .route-bg {
             transform: scale(1.05);
         }
         
-
         .route-overlay {
             position: absolute;
             top: 0;
@@ -260,7 +258,7 @@
         .route-content {
             position: relative;
             z-index: 3;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -268,65 +266,48 @@
         }
 
         .route-content h3 {
-            margin: 0 0 0.5rem;
-            font-size: 1.2rem;
+            margin: 0 0 0.75rem;
+            font-size: 1.25rem;
             color: var(--text-light);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: normal;
+            font-weight: 600;
         }
 
         .route-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.75rem;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
         }
 
         .route-meta span {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.3rem 0.6rem;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
             color: var(--text-light);
             white-space: nowrap;
+            font-weight: 500;
         }
 
-        /*.route-description {
-            font-size: 0.85rem;
-            margin: 0.5rem 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 5;
-            -webkit-box-orient: vertical;
-            color: #fff;
-        }*/
-
-                   
         .route-description {
-            font-size: 0.85rem;
-            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            margin: 0.75rem 0;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            color: #fff;
-            /* Center alignment */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100%; /* Ensure it takes full height of parent */
-}
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.4;
+            flex-grow: 1;
+        }
 
         .route-price {
-            font-size: 1rem;
-            color: #ea9423;
+            font-size: 1.1rem;
             color: var(--secondary-color);
             font-weight: bold;
-            margin: 0.5rem 0;
+            margin: 1rem 0 0.75rem;
         }
 
         .route-buttons {
@@ -341,23 +322,31 @@
             padding: 0.7rem;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 0.8rem;
-            transition: background 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .route-buttons .details {
             background: var(--primary-color);
             color: var(--text-light);
-            
+            border-color: var(--primary-color);
+        }
+
+        .route-buttons .details:hover {
+            background: rgba(5, 68, 34, 0.9);
+            opacity: 1;
         }
 
         .route-buttons .inquire {
             background: var(--secondary-color);
             color: var(--text-light);
+            border-color: var(--secondary-color);
         }
 
         .route-buttons a:hover {
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         @media (max-width: 768px) {
@@ -446,10 +435,6 @@
     
     <!-- Mobile Bottom Navigation -->
     <div class="mobile-bottom-nav">
-        <a href="blog.html" class="mobile-nav-item">
-            <i class="fas fa-blog"></i>
-            <span>Blog</span>
-        </a>
         <a href="safari.html" class="mobile-nav-item">
             <i class="fas fa-paw"></i>
             <span>Safari</span>
@@ -483,7 +468,6 @@
                 <li><a href="trekking.html">Trekking</a></li>
                 <li><a href="safari.html">Safari</a></li>
                 <li><a href="zanzibar.html">Zanzibar</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -555,13 +539,13 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="package-gallery">
-                            <img src="images/kilimanjaro-detail-1.jpg" alt="Kilimanjaro climbers" class="img-fluid rounded mb-3" loading="lazy">
+                            <img src="images/4.webp" alt="Kilimanjaro climbers" class="img-fluid rounded mb-3">
                             <div class="row">
                                 <div class="col-6">
-                                    <img src="images/kilimanjaro-detail-2.jpg" alt="Kilimanjaro camp" class="img-fluid rounded" loading="lazy">
+                                    <img src="images/1.webp" alt="Kilimanjaro camp" class="img-fluid rounded">
                                 </div>
                                 <div class="col-6">
-                                    <img src="images/kilimanjaro-detail-3.jpg" alt="Kilimanjaro summit" class="img-fluid rounded" loading="lazy">
+                                    <img src="images/13.webp" alt="Kilimanjaro summit" class="img-fluid rounded">
                                 </div>
                             </div>
                         </div>
@@ -617,141 +601,133 @@
         <div class="routes-grid">
             <!-- Machame Route (6 Days) -->
             <div class="route-card">
-                <img src="images/14.webp" alt="Machame Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/14.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Machame Route (6 Days)</h3>
-                        
-                        <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
+                    <h3>Machame Route</h3>
+                    <div class="route-meta">
+                        <span>6 Days</span>
+                        <span>Scenic</span>
+                        <span>High Success</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,150</span></p>
-                        <div class="route-buttons">
-                            <a href="6-day-machame.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="6-day-machame.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Marangu Route (5 Days) -->
             <div class="route-card">
-                <img src="images/15.webp" alt="Marangu Route" class="route-image"loading="eager">
+                <div class="route-bg" style="background-image: url('images/15.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Marangu Route (5 Days)</h3>
-                       
-                        <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    <h3>Marangu Route</h3>
+                    <div class="route-meta">
+                        <span>5 Days</span>
+                        <span>Hut Accommodation</span>
+                        <span>Beginner Friendly</span>
                     </div>
-                    <div>
-                       <p>From <span class="route-price" style="color: #ea9423;">$1,950</span></p>
-                        <div class="route-buttons">
-                            <a href="5-day-marangu.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    <p class="route-price">From $1,950</p>
+                    <div class="route-buttons">
+                        <a href="5-day-marangu.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
              <!-- Northern Circuit (9 Days) -->
             <div class="route-card">
-                <img src="images/25.webp" alt="Northern Circuit" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/25.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Northern Circuit (9 Days)</h3>
-                        
-                        <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
+                    <h3>Northern Circuit</h3>
+                    <div class="route-meta">
+                        <span>9 Days</span>
+                        <span>Extended</span>
+                        <span>Best Views</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,850</span></p>
-                        <div class="route-buttons">
-                            <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
+                    <p class="route-price">From $2,850</p>
+                    <div class="route-buttons">
+                        <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-           
              <!-- Umbwe Route (7 Days) -->
             <div class="route-card">
-                <img src="images/26.webp" alt="Umbwe Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/26.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Umbwe Route (7 Days)</h3>
-                        
-                        <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
+                    <h3>Umbwe Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Challenging</span>
+                        <span>Expert Only</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,050</span> </p>
-                        <div class="route-buttons">
-                            <a href="7-day-umbwe.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
+                    <p class="route-price">From $2,050</p>
+                    <div class="route-buttons">
+                        <a href="7-day-umbwe.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Lemosho Route (7 Days) -->
             <div class="route-card">
-                <img src="images/19.webp" alt="Lemosho Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/19.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Lemosho Route (7 Days)</h3>
-                        
-                        <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    <h3>Lemosho Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Scenic</span>
+                        <span>Excellent Acclimatization</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,450</span></p>
-                        <div class="route-buttons">
-                            <a href="7-day-lemosho.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    <p class="route-price">From $2,450</p>
+                    <div class="route-buttons">
+                        <a href="7-day-lemosho.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Rongai Route (8 Days) -->
             <div class="route-card">
-                <img src="images/23.webp" alt="Rongai Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/23.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Rongai Route (8 Days)</h3>
-                       
-                        <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    <h3>Rongai Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>Less Crowded</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,550</span></p>
-                        <div class="route-buttons">
-                            <a href="8-day-rongai.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    <p class="route-price">From $2,550</p>
+                    <div class="route-buttons">
+                        <a href="8-day-rongai.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
              <!-- Shira Route (8 Days) -->
             <div class="route-card">
-                <img src="images/27.webp" alt="Shira Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/27.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Shira Route (8 Days)</h3>
-                       
-                        <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    <h3>Shira Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>High Altitude</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,650</span></p>
-                        <div class="route-buttons">
-                            <a href="8-day-shira.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    <p class="route-price">From $2,650</p>
+                    <div class="route-buttons">
+                        <a href="8-day-shira.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
@@ -759,40 +735,38 @@
             
             <!-- Marangu Route (6 Days) -->
             <div class="route-card">
-                <img src="images/18.webp" alt="Marangu Route" class="route-image"  loading="eager">
+                <div class="route-bg" style="background-image: url('images/18.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Marangu Route (6 Days)</h3>
-                       
-                        <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    <h3>Marangu Route</h3>
+                    <div class="route-meta">
+                        <span>6 Days</span>
+                        <span>Comfort</span>
+                        <span>Better Acclimatization</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,150</span></p>
-                        <div class="route-buttons">
-                            <a href="6-day-marangu.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="6-day-marangu.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Shira Route (7 Days) -->
             <div class="route-card">
-                <img src="images/24.webp" alt="Shira Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/24.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Shira Route (7 Days)</h3>
-                      
-                        <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    <h3>Shira Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Scenic</span>
+                        <span>Plateau Views</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,350</span></p>
-                        <div class="route-buttons">
-                            <a href="7-day-shira.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    <p class="route-price">From $2,350</p>
+                    <div class="route-buttons">
+                        <a href="7-day-shira.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
@@ -800,40 +774,38 @@
 
             <!-- Lemosho Route (8 Days) -->
             <div class="route-card">
-                <img src="images/20.webp" alt="Lemosho Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/20.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Lemosho Route (8 Days)</h3>
-                       
-                        <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    <h3>Lemosho Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>Premium Views</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,750</span></p>
-                        <div class="route-buttons">
-                            <a href="8-day-lemosho.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    <p class="route-price">From $2,750</p>
+                    <div class="route-buttons">
+                        <a href="8-day-lemosho.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Rongai Route (7 Days) -->
             <div class="route-card">
-                <img src="images/22.webp" alt="Rongai Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/22.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Rongai Route (7 Days)</h3>
-                       
-                        <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    <h3>Rongai Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Wilderness</span>
+                        <span>Quiet Route</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,250</span></p>
-                        <div class="route-buttons">
-                            <a href="7-day-rongai.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    <p class="route-price">From $2,250</p>
+                    <div class="route-buttons">
+                        <a href="7-day-rongai.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
@@ -843,20 +815,19 @@
 
              <!-- Machame Route (7 Days) -->
             <div class="route-card">
-                <img src="images/17.webp" alt="Machame Route" class="route-image" loading="eager">
+                <div class="route-bg" style="background-image: url('images/17.webp')"></div>
                 <div class="route-overlay"></div>
                 <div class="route-content">
-                    <div>
-                        <h3>Machame Route (7 Days)</h3>
-                       
-                        <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    <h3>Machame Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Extended</span>
+                        <span>Better Success</span>
                     </div>
-                    <div>
-                        <p>From <span class="route-price" style="color: #ea9423;">$2,150</span></p>
-                        <div class="route-buttons">
-                            <a href="7-day-machame.html" class="details">View Itinerary</a>
-                          
-                        </div>
+                    <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="7-day-machame.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
@@ -1154,7 +1125,7 @@
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
     <script src="js/main.js"></script>
 </body>
 </html>
