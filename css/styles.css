@@ -301,6 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-book-now:hover {
     background-color: #033018;
     transform: translateY(-2px);
+    color: var(--text-light);
 }
 
 /* Hero Section */

@@ -311,11 +311,12 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
+     <!-- Inquiry Modal -->
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Plan Your Adventure</h5>
+                    <h5 class="modal-title" id="inquiryModalLabel">Inquire About Zanzibar</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -329,15 +330,37 @@
                             <input type="email" class="form-control" id="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label">Your Adventure Plans</label>
-                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required>I'm interested in Zanzibar. Please send me more information.</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="preferredDate" class="form-label">Preferred Start Date</label>
+                            <input type="date" class="form-control" id="preferredDate">
+                        </div>
+                        <div class="mb-3">
+                            <label for="participants" class="form-label">Number of Participants</label>
+                            <select class="form-select" id="participants">
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3-4" selected>3-4 people</option>
+                                <option value="5-6">5-6 people</option>
+                                <option value="7+">7+ people</option>
+                            </select>
+                        </div>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitInquiry">Submit Inquiry</button>
                 </div>
             </div>
         </div>
     </div>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

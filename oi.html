@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilimanjaro Climbing Packages | Don Odyssey Safaris</title>
+    <meta name="description" content="Choose from our expert-guided Kilimanjaro climbing packages. Machame, Lemosho, Marangu, and Rongai routes with 90%+ success rates.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles for the packages page */
+        .packages-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/6.webp') no-repeat center center;
+            background-size: cover;
+            padding: 200px 0 180px; /*120px 0 80px;*/
+            color: white;
+            text-align: center;
+        }
+
+             
+        .filter-container {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        
+        .filter-group h4 {
+            color: #054422;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #054422;
+            color: white;
+            border-color: #054422;
+        }
+        
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px; /*30px;*/
+            margin-bottom: 40px;/*50px;*/
+        }
+        
+        .package-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08); /*0 5px 15px rgba(0,0,0,0.1);*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            height: auto;/*70%;*/
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px); /*translateY(-10px);*/
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);/*0 15px 30px rgba(0,0,0,0.15);*/
+        }
+        
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 16px; /*20px;*/
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .package-title {
+            font-size: 1.25rem;
+            color: #054422;
+            margin-bottom: 10px;
+        }
+        
+        .package-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px; /*15px;*/
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .package-days, .package-difficulty {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .package-description {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .package-features {
+            margin-bottom: 20px;
+        }
+        
+        .package-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .package-feature i {
+            color: #ea9423;
+            margin-right: 10px;
+        }
+        
+        .package-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #054422;
+            margin-bottom: 5px;
+        }
+        
+        .price-note {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        .package-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-details {
+            flex-grow: 1;
+            background: #f8f9fa;
+            color: #054422;
+            border: 1px solid #dee2e6;
+        }
+        
+        .btn-details:hover {
+            background: #054422;
+            color: white;
+        }
+        
+        .btn-inquire {
+            background: #ea9423;
+            color: white;
+            border: none;
+        }
+        
+        .btn-inquire:hover {
+            background: #d17a0f;
+        }
+
+        .routes-section {
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .routes-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .routes-section p {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .route-card {
+            position: relative;
+            min-height: 320px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .route-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .route-bg {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: transform 0.5s ease;
+        }
+
+        .route-card:hover .route-bg {
+            transform: scale(1.05);
+        }
+        
+        .route-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .route-content {
+            position: relative;
+            z-index: 3;
+            padding: 1.5rem 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .route-content h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.25rem;
+            color: var(--text-light);
+            white-space: normal;
+            font-weight: 600;
+        }
+
+        .route-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .route-meta span {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            color: var(--text-light);
+            white-space: nowrap;
+            font-weight: 500;
+        }
+
+        .route-description {
+            font-size: 0.9rem;
+            margin: 0.75rem 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            /* -webkit-line-clamp: 3; */
+            -webkit-box-orient: vertical;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .route-price {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin: 1rem 0 0.75rem;
+        }
+
+        .route-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .route-buttons a {
+            flex: 1;
+            text-align: center;
+            padding: 0.7rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .route-buttons .details {
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-color: var(--primary-color);
+        }
+
+        .route-buttons .details:hover {
+            background: rgba(5, 68, 34, 0.9);
+            opacity: 1;
+        }
+
+        .route-buttons .inquire {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            border-color: var(--secondary-color);
+        }
+
+        .route-buttons a:hover {
+            opacity: 0.95;
+        }
+
+        @media (max-width: 768px) {
+           
+            .routes-section {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            .routes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .route-card {
+                min-height: 280px;
+                margin: 0 10px; /* Added margin for better spacing */
+            }
+            
+            .route-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .route-meta span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+            }
+            
+            .route-description {
+                font-size: 0.8rem;
+               /* -webkit-line-clamp: 2; Show 2 lines on mobile */
+            }
+            
+            .route-price {
+                font-size: 0.9rem;
+            }
+            
+            .route-buttons a {
+                font-size: 0.75rem;
+                padding: 0.3rem;
+            }
+        }
+                
+        
+          
+        @media (max-width: 768px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-options {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+              <a class="navbar-brand" href="index.html">
+                <img src="images/DON.jpg" alt="Logo" class="logo-img">
+                <span class="logo-don">Don Odyssey</span>
+                <span class="logo-safaris">Safaris</span>
+            </a>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="trekking.html">Trekking</a></li>
+                    <li><a href="safari.html">Safari</a></li>
+                    <li><a href="zanzibar.html">Zanzibar</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <button class="btn btn-book-now" data-bs-toggle="modal" data-bs-target="#inquiryModal">Book Now</button>
+        </div>
+    </nav>
+    
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="safari.html" class="mobile-nav-item">
+            <i class="fas fa-paw"></i>
+            <span>Safari</span>
+        </a>
+        <a href="trekking.html" class="mobile-nav-item">
+            <i class="fas fa-mountain"></i>
+            <span>Trekking</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+        <div class="mobile-nav-item mobile-menu-trigger">
+            <i class="fas fa-bars"></i>
+            <span>Menu</span>
+        </div>
+    </div>
+    
+    <!-- Mobile Side Menu -->
+    <div class="mobile-side-menu">
+        <div class="mobile-side-menu-header">
+            <div class="logo">
+                <img src="images/donald logo-02.jpg" alt="Don Odyssey Safaris Logo">
+            </div>
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="trekking.html">Trekking</a></li>
+                <li><a href="safari.html">Safari</a></li>
+                <li><a href="zanzibar.html">Zanzibar</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="overlay"></div>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="packages-hero">
+            <div class="container">
+                <h1>Kilimanjaro Climbing Packages</h1>
+                <p class="lead">Choose from our expertly crafted routes to conquer Africa's highest peak</p>
+            </div>
+        </section>
+
+        <!-- Breadcrumb -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="trekking.html">Trekking</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Kilimanjaro Packages</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Package Overview -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="section-header text-start">
+                            <h2>Kilimanjaro Climbing Experience</h2>
+                            <div class="package-highlights">
+                                <span><i class="fas fa-clock"></i> 5-9 Days</span>
+                                <span><i class="fas fa-user-friends"></i> Small Groups</span>
+                                <span><i class="fas fa-star"></i> 90% Success Rate</span>
+                            </div>
+                        </div>
+                        <p>At 5,895 meters (19,341 feet), Mount Kilimanjaro is Africa's highest peak and the world's tallest free-standing mountain. Our carefully designed climbing itineraries and expert guides give you the best chance of reaching Uhuru Peak while enjoying the journey through Kilimanjaro's stunning ecological zones.</p>
+                        
+                        <div class="package-details mt-4">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <div>
+                                    <h5>Location</h5>
+                                    <p>Northern Tanzania, near Moshi</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <div>
+                                    <h5>Best Time to Climb</h5>
+                                    <p>January-March and June-October</p>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <div>
+                                    <h5>Temperature Range</h5>
+                                    <p>+25°C to -20°C (base to summit)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="package-gallery">
+                            <img src="images/4.webp" alt="Kilimanjaro climbers" class="img-fluid rounded mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <img src="images/1.webp" alt="Kilimanjaro camp" class="img-fluid rounded">
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/13.webp" alt="Kilimanjaro summit" class="img-fluid rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Climb Kilimanjaro With Us</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Safety First</h4>
+                            <p>Daily health checks, emergency oxygen, and certified wilderness first responders on every climb.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-box">
+                            <i class="fas fa-mountain"></i>
+                            <h4>Route Expertise</h4>
+                            <p>We carefully select routes for optimal acclimatization and scenic diversity.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-box">
+                            <i class="fas fa-utensils"></i>
+                            <h4>Quality Meals</h4>
+                            <p>Nutritious, energy-packed meals prepared by our mountain chefs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-box">
+                            <i class="fas fa-medal"></i>
+                            <h4>KPAP Certified</h4>
+                            <p>We meet the highest standards for porter treatment and ethical climbing practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Packages Grid -->
+                
+       <section class="routes-section">
+        <h2>Kilimanjaro Climbing Routes</h2>
+        <p style="color:#6c757d ;">Choose the path that matches your experience and preferences</p>
+        <div class="routes-grid">
+            <!-- Machame Route (6 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/14.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Machame Route</h3>
+                    <div class="route-meta">
+                        <span>6 Days</span>
+                        <span>Scenic</span>
+                        <span>High Success</span>
+                    </div>
+                    <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="6-day-machame.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marangu Route (5 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/15.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Marangu Route</h3>
+                    <div class="route-meta">
+                        <span>5 Days</span>
+                        <span>Hut Accommodation</span>
+                        <span>Beginner Friendly</span>
+                    </div>
+                    <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    <p class="route-price">From $1,950</p>
+                    <div class="route-buttons">
+                        <a href="5-day-marangu.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Northern Circuit (9 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/25.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Northern Circuit</h3>
+                    <div class="route-meta">
+                        <span>9 Days</span>
+                        <span>Extended</span>
+                        <span>Best Views</span>
+                    </div>
+                    <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
+                    <p class="route-price">From $2,850</p>
+                    <div class="route-buttons">
+                        <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Umbwe Route (7 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/26.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Umbwe Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Challenging</span>
+                        <span>Expert Only</span>
+                    </div>
+                    <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
+                    <p class="route-price">From $2,050</p>
+                    <div class="route-buttons">
+                        <a href="7-day-umbwe.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lemosho Route (7 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/19.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Lemosho Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Scenic</span>
+                        <span>Excellent Acclimatization</span>
+                    </div>
+                    <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    <p class="route-price">From $2,450</p>
+                    <div class="route-buttons">
+                        <a href="7-day-lemosho.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rongai Route (8 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/23.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Rongai Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>Less Crowded</span>
+                    </div>
+                    <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    <p class="route-price">From $2,550</p>
+                    <div class="route-buttons">
+                        <a href="8-day-rongai.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Shira Route (8 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/27.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Shira Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>High Altitude</span>
+                    </div>
+                    <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    <p class="route-price">From $2,650</p>
+                    <div class="route-buttons">
+                        <a href="8-day-shira.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- Marangu Route (6 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/18.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Marangu Route</h3>
+                    <div class="route-meta">
+                        <span>6 Days</span>
+                        <span>Comfort</span>
+                        <span>Better Acclimatization</span>
+                    </div>
+                    <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="6-day-marangu.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shira Route (7 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/24.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Shira Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Scenic</span>
+                        <span>Plateau Views</span>
+                    </div>
+                    <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    <p class="route-price">From $2,350</p>
+                    <div class="route-buttons">
+                        <a href="7-day-shira.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Lemosho Route (8 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/20.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Lemosho Route</h3>
+                    <div class="route-meta">
+                        <span>8 Days</span>
+                        <span>Extended</span>
+                        <span>Premium Views</span>
+                    </div>
+                    <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    <p class="route-price">From $2,750</p>
+                    <div class="route-buttons">
+                        <a href="8-day-lemosho.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rongai Route (7 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/22.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Rongai Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Wilderness</span>
+                        <span>Quiet Route</span>
+                    </div>
+                    <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    <p class="route-price">From $2,250</p>
+                    <div class="route-buttons">
+                        <a href="7-day-rongai.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+
+           
+
+             <!-- Machame Route (7 Days) -->
+            <div class="route-card">
+                <div class="route-bg" style="background-image: url('images/17.webp')"></div>
+                <div class="route-overlay"></div>
+                <div class="route-content">
+                    <h3>Machame Route</h3>
+                    <div class="route-meta">
+                        <span>7 Days</span>
+                        <span>Extended</span>
+                        <span>Better Success</span>
+                    </div>
+                    <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    <p class="route-price">From $2,150</p>
+                    <div class="route-buttons">
+                        <a href="7-day-machame.html" class="details">View Itinerary</a>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+
+   
+    </main>
+ <!-- ========== COMBINED FAQ SECTION ========== -->
+ <section class="section-padding bg-light">
+    <div class="container">
+        <div class="section-header">
+            <h2>Trekking FAQs</h2>
+            <p>Answers to common questions about our mountain adventures</p>
+        </div>
+        <div class="accordion" id="faqAccordion">
+            <!-- Difficulty & Preparation -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How difficult are these climbs and how should I prepare?
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <strong>Kilimanjaro:</strong> Moderate difficulty but requires endurance. Train with 4-6 hour hikes carrying 5kg pack for 2+ months.<br><br>
+                        <strong>Mount Meru:</strong> Good for intermediates. Focus on stair climbing and leg strength.<br><br>
+                        <strong>Oldonyo Lengai:</strong> Technically challenging - requires scrambling experience. Train on steep, uneven terrain.<br><br>
+                        All climbs benefit from cardiovascular training and altitude hikes if possible.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Best Time to Climb -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        When is the best time to climb each mountain?
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <div class="faq-comparison">
+                            <div class="faq-mountain">
+                                <h4>Kilimanjaro</h4>
+                                <p>Jan-Mar & Jun-Oct (Dry seasons)</p>
+                                <p>July-Sept busiest</p>
+                            </div>
+                            <div class="faq-mountain">
+                                <h4>Mount Meru</h4>
+                                <p>Jun-Feb (Avoid heavy rains Apr-May)</p>
+                                <p>Dec-Feb clearest views</p>
+                            </div>
+                            <div class="faq-mountain">
+                                <h4>Oldonyo Lengai</h4>
+                                <p>Jun-Oct (Coolest months)</p>
+                                <p>Night climbs year-round</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Altitude Sickness -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How do you handle altitude sickness?
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Our protocols exceed industry standards:
+                        <ul>
+                            <li>Daily health checks with pulse oximeters</li>
+                            <li>"Pole pole" (slow) pace for proper acclimatization</li>
+                            <li>Extra acclimatization days on Kilimanjaro routes</li>
+                            <li>Emergency oxygen and Gamow bags on all climbs</li>
+                            <li>Immediate descent protocol for severe AMS</li>
+                        </ul>
+                        <strong>Note:</strong> Meru's shorter profile makes AMS less common than Kilimanjaro
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gear & Packing -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What gear do you provide and what should I bring?
+                    </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>We Provide:</h5>
+                                <ul>
+                                    <li>4-season mountain tents</li>
+                                    <li>Sleeping mats</li>
+                                    <li>Dining tent & camp chairs</li>
+                                    <li>Emergency oxygen</li>
+                                    <li>All cooking equipment</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>You Should Bring:</h5>
+                                <ul>
+                                    <li>Quality sleeping bag (-10°C rating)</li>
+                                    <li>Layered clothing system</li>
+                                    <li>Sturdy broken-in boots</li>
+                                    <li>Headlamp (extra batteries)</li>
+                                    <li>Trekking poles (highly recommended)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p><em>Complete packing lists provided after booking</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Records -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        What are your safety records and guide qualifications?
+                    </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <div class="safety-stats">
+                            <div class="stat-box">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Safety Record</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-label">Years Average Guide Experience</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Ground Support</div>
+                            </div>
+                        </div>
+                        <p>All guides are certified in:</p>
+                        <ul>
+                            <li>Wilderness First Responder (WFR) training</li>
+                            <li>Altitude sickness recognition and treatment</li>
+                            <li>KPAP certified (Kilimanjaro only)</li>
+                            <li>English fluency + local language expertise</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Factors -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Why do trekking costs vary so much between operators?
+                    </button>
+                </h3>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Key factors affecting price:
+                        <table class="faq-table">
+                            <tr>
+                                <th>Budget Operators</th>
+                                <th>Premium Operators</th>
+                            </tr>
+                            <tr>
+                                <td>4:1 client-to-guide ratio</td>
+                                <td>2:1 client-to-guide ratio</td>
+                            </tr>
+                            <tr>
+                                <td>Basic meals</td>
+                                <td>Chef-prepared meals</td>
+                            </tr>
+                            <tr>
+                                <td>Shared equipment</td>
+                                <td>High-end private gear</td>
+                            </tr>
+                            <tr>
+                                <td>Minimal safety equipment</td>
+                                <td>Full emergency systems</td>
+                            </tr>
+                        </table>
+                        <p class="mt-3">We're transparent about what's included - no hidden porters or national park fees.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cultural Considerations -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        What cultural considerations should I know about?
+                    </button>
+                </h3>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <strong>On the Mountain:</strong>
+                        <ul>
+                            <li>Always greet crew with "Jambo" or "Mambo"</li>
+                            <li>Ask permission before photographing staff</li>
+                            <li>Tip guides/porters collectively (we provide guidelines)</li>
+                        </ul>
+                        
+                        <strong>Oldonyo Lengai Specific:</strong>
+                        <ul>
+                            <li>Sacred to Maasai - follow guide's instructions carefully</li>
+                            <li>No removing rocks or natural items</li>
+                            <li>Special ceremonies may occur - observe respectfully</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                        <span class="logo-don">Don Odyssey</span>
+                        <span class="logo-safaris">Safaris</span>
+                    </div>
+                    <p>© 2025 Don Odyssey Safaris. All rights reserved.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="trekking.html">Kilimanjaro</a></li>
+                            <li><a href="safari.html">Safari</a></li>
+                            <li><a href="zanzibar.html">Zanzibar</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3>Contact Us</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Safari Road, Arusha, Tanzania</p>
+                        <p><i class="fas fa-phone"></i> +255 123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@donodysseysafaris.com</p>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Don Odyssey Safaris. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="inquiryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Plan Your Adventure</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="inquiryForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Adventure Plans</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
