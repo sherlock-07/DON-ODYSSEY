@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kilimanjaro Climbing Packages | Don Odyssey Safaris</title>
+    <link rel="icon"  href="images/DON.jpg" type="image/jpg">
     <meta name="description" content="Choose from our expert-guided Kilimanjaro climbing packages. Machame, Lemosho, Marangu, and Rongai routes with 90%+ success rates.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -187,209 +188,180 @@
             background: #d17a0f;
         }
 
-        .routes-section {
-            padding-bottom: 2rem;
-            padding-top: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+      
+     .kilimanjaro-routes-section {
+        padding: 5rem 0;
+        background: #f8f9fa;
+    }
+
+    .kilimanjaro-routes-section .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .kilimanjaro-routes-section .section-header h2 {
+        color: #054422;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .kilimanjaro-routes-section .section-header p {
+        color: #6c757d;
+        font-size: 1.1rem;
+    }
+
+    .kilimanjaro-routes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .kilimanjaro-route-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        transition: all 0.3s ease;
+        height: 420px;
+    }
+
+    .kilimanjaro-route-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .kilimanjaro-route-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.5s ease;
+    }
+
+    .kilimanjaro-route-card:hover .kilimanjaro-route-bg {
+        transform: scale(1.1);
+    }
+
+    .kilimanjaro-route-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85));
+        z-index: 2;
+    }
+
+    .kilimanjaro-route-content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+    }
+
+    .kilimanjaro-route-content h3 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        color: white;
+        font-weight: 600;
+    }
+
+    .kilimanjaro-route-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .kilimanjaro-route-meta span {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .kilimanjaro-route-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        opacity: 0.95;
+    }
+
+    .kilimanjaro-route-price {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #ea9423;
+        margin-bottom: 1.5rem;
+    }
+
+    .kilimanjaro-route-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .kilimanjaro-route-buttons .details {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        padding: 0.875rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .kilimanjaro-route-buttons .details:hover {
+        background: transparent;
+        color: white;
+        border-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .kilimanjaro-routes-section {
+            padding: 3rem 1rem;
         }
 
-        .routes-section h2 {
-            color: var(--primary-color);
+        .kilimanjaro-routes-section .section-header h2 {
             font-size: 2rem;
-            text-align: center;
-            margin-bottom: 0.5rem;
         }
 
-        .routes-section p {
-            color: var(--text-light);
-            text-align: center;
-            margin-bottom: 2rem;
+        .kilimanjaro-routes-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
-        .routes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .kilimanjaro-route-card {
+            height: 380px;
         }
 
-        .route-card {
-            position: relative;
-            min-height: 320px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
+        .kilimanjaro-route-content {
+            padding: 1.5rem;
         }
 
-        .route-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        .kilimanjaro-route-content h3 {
+            font-size: 1.5rem;
         }
 
-        .route-bg {
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            transition: transform 0.5s ease;
-        }
-
-        .route-card:hover .route-bg {
-            transform: scale(1.05);
-        }
-        
-        .route-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-        }
-
-        .route-content {
-            position: relative;
-            z-index: 3;
-            padding: 1.5rem 1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .route-content h3 {
-            margin: 0 0 0.75rem;
-            font-size: 1.25rem;
-            color: var(--text-light);
-            white-space: normal;
-            font-weight: 600;
-        }
-
-        .route-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+        .kilimanjaro-route-meta span {
             font-size: 0.8rem;
-        }
-
-        .route-meta span {
-            background: rgba(255, 255, 255, 0.25);
             padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            color: var(--text-light);
-            white-space: nowrap;
-            font-weight: 500;
         }
-
-        .route-description {
-            font-size: 0.9rem;
-            margin: 0.75rem 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            color: rgba(255, 255, 255, 0.95);
-            line-height: 1.4;
-            flex-grow: 1;
-        }
-
-        .route-price {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin: 1rem 0 0.75rem;
-        }
-
-        .route-buttons {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
-
-        .route-buttons a {
-            flex: 1;
-            text-align: center;
-            padding: 0.7rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .route-buttons .details {
-            background: var(--primary-color);
-            color: var(--text-light);
-            border-color: var(--primary-color);
-        }
-
-        .route-buttons .details:hover {
-            background: rgba(5, 68, 34, 0.9);
-            opacity: 1;
-        }
-
-        .route-buttons .inquire {
-            background: var(--secondary-color);
-            color: var(--text-light);
-            border-color: var(--secondary-color);
-        }
-
-        .route-buttons a:hover {
-            opacity: 0.95;
-        }
-
-        @media (max-width: 768px) {
-           
-            .routes-section {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            
-            .routes-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .route-card {
-                min-height: 280px;
-                margin: 0 10px; /* Added margin for better spacing */
-            }
-            
-            .route-content h3 {
-                font-size: 1.1rem;
-            }
-            
-            .route-meta span {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.5rem;
-            }
-            
-            .route-description {
-                font-size: 0.8rem;
-                -webkit-line-clamp: 2;
-            }
-            
-            .route-price {
-                font-size: 0.9rem;
-            }
-            
-            .route-buttons a {
-                font-size: 0.75rem;
-                padding: 0.3rem;
-            }
-        }
-                
+    }       
         
           
         @media (max-width: 768px) {
@@ -426,6 +398,7 @@
                     <li><a href="zanzibar.html">Zanzibar</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
             
@@ -457,7 +430,7 @@
     <div class="mobile-side-menu">
         <div class="mobile-side-menu-header">
             <div class="logo">
-                <img src="images/donald logo-02.jpg" alt="Don Odyssey Safaris Logo">
+                 <img src="images/DON.jpg" alt="Logo"    >
             </div>
             <div class="close-menu">
                 <i class="fas fa-times"></i>
@@ -595,247 +568,246 @@
 
          <!-- Packages Grid -->
                 
-       <section class="routes-section">
-        <h2>Kilimanjaro Climbing Routes</h2>
-        <p style="color:#6c757d ;">Choose the path that matches your experience and preferences</p>
-        <div class="routes-grid">
+     <section id="routes" class="kilimanjaro-routes-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Kilimanjaro Climbing Routes</h2>
+            <p>Choose your path to Africa's highest peak</p>
+        </div>
+
+        <div class="kilimanjaro-routes-grid">
+            
             <!-- Machame Route (6 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/14.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/14.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Machame Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>6 Days</span>
                         <span>Scenic</span>
                         <span>High Success</span>
                     </div>
-                    <p class="route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
-                    <p class="route-price">From $2,150</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Known as the "Whiskey Route," offers scenic diversity and high success rates.</p>
+                    <p class="kilimanjaro-route-price">From $2,150</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="6-day-machame.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Marangu Route (5 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/15.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/15.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Marangu Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>5 Days</span>
                         <span>Hut Accommodation</span>
                         <span>Beginner Friendly</span>
                     </div>
-                    <p class="route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
-                    <p class="route-price">From $1,950</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">"Coca-Cola Route" with hut accommodations, suitable for most climbers.</p>
+                    <p class="kilimanjaro-route-price">From $1,950</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="5-day-marangu.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-             <!-- Northern Circuit (9 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/25.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <!-- Northern Circuit (9 Days) -->
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/25.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Northern Circuit</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>9 Days</span>
                         <span>Extended</span>
                         <span>Best Views</span>
                     </div>
-                    <p class="route-description">Longest route with unparalleled views and highest success rate.</p>
-                    <p class="route-price">From $2,850</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Longest route with unparalleled views and highest success rate.</p>
+                    <p class="kilimanjaro-route-price">From $2,850</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="9-day-northern-circuit.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-             <!-- Umbwe Route (7 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/26.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <!-- Umbwe Route (7 Days) -->
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/26.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Umbwe Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>7 Days</span>
                         <span>Challenging</span>
                         <span>Expert Only</span>
                     </div>
-                    <p class="route-description">Steepest, most direct route for experienced trekkers.</p>
-                    <p class="route-price">From $2,050</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Steepest, most direct route for experienced trekkers.</p>
+                    <p class="kilimanjaro-route-price">From $2,050</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="7-day-umbwe.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Lemosho Route (7 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/19.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/19.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Lemosho Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>7 Days</span>
                         <span>Scenic</span>
                         <span>Excellent Acclimatization</span>
                     </div>
-                    <p class="route-description">Scenic route with excellent acclimatization for high success rates.</p>
-                    <p class="route-price">From $2,450</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Scenic route with excellent acclimatization for high success rates.</p>
+                    <p class="kilimanjaro-route-price">From $2,450</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="7-day-lemosho.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Rongai Route (8 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/23.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/23.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Rongai Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>8 Days</span>
                         <span>Extended</span>
                         <span>Less Crowded</span>
                     </div>
-                    <p class="route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
-                    <p class="route-price">From $2,550</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Extended Rongai with extra day for acclimatization and scenic exploration.</p>
+                    <p class="kilimanjaro-route-price">From $2,550</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="8-day-rongai.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-             <!-- Shira Route (8 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/27.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <!-- Shira Route (8 Days) -->
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/27.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Shira Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>8 Days</span>
                         <span>Extended</span>
                         <span>High Altitude</span>
                     </div>
-                    <p class="route-description">Extended Shira with additional acclimatization and panoramic views.</p>
-                    <p class="route-price">From $2,650</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Extended Shira with additional acclimatization and panoramic views.</p>
+                    <p class="kilimanjaro-route-price">From $2,650</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="8-day-shira.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-            
             <!-- Marangu Route (6 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/18.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/18.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Marangu Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>6 Days</span>
                         <span>Comfort</span>
                         <span>Better Acclimatization</span>
                     </div>
-                    <p class="route-description">Longer Marangu with improved acclimatization and comfort.</p>
-                    <p class="route-price">From $2,150</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Longer Marangu with improved acclimatization and comfort.</p>
+                    <p class="kilimanjaro-route-price">From $2,150</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="6-day-marangu.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Shira Route (7 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/24.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/24.webp')" ></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Shira Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>7 Days</span>
                         <span>Scenic</span>
                         <span>Plateau Views</span>
                     </div>
-                    <p class="route-description">High-altitude start on Shira Plateau with stunning views.</p>
-                    <p class="route-price">From $2,350</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">High-altitude start on Shira Plateau with stunning views.</p>
+                    <p class="kilimanjaro-route-price">From $2,350</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="7-day-shira.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-
             <!-- Lemosho Route (8 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/20.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/20.webp')"></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Lemosho Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>8 Days</span>
                         <span>Extended</span>
                         <span>Premium Views</span>
                     </div>
-                    <p class="route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
-                    <p class="route-price">From $2,750</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Extended Lemosho for optimal acclimatization and stunning views.</p>
+                    <p class="kilimanjaro-route-price">From $2,750</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="8-day-lemosho.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
             <!-- Rongai Route (7 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/22.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/22.webp')"></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Rongai Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>7 Days</span>
                         <span>Wilderness</span>
                         <span>Quiet Route</span>
                     </div>
-                    <p class="route-description">Northern approach, less crowded with a wilderness feel.</p>
-                    <p class="route-price">From $2,250</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Northern approach, less crowded with a wilderness feel.</p>
+                    <p class="kilimanjaro-route-price">From $2,250</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="7-day-rongai.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-
-           
-
-             <!-- Machame Route (7 Days) -->
-            <div class="route-card">
-                <div class="route-bg" style="background-image: url('images/17.webp')"></div>
-                <div class="route-overlay"></div>
-                <div class="route-content">
+            <!-- Machame Route (7 Days) -->
+            <div class="kilimanjaro-route-card">
+                <div class="kilimanjaro-route-bg" style="background-image: url('images/17.webp')"></div>
+                <div class="kilimanjaro-route-overlay"></div>
+                <div class="kilimanjaro-route-content">
                     <h3>Machame Route</h3>
-                    <div class="route-meta">
+                    <div class="kilimanjaro-route-meta">
                         <span>7 Days</span>
                         <span>Extended</span>
                         <span>Better Success</span>
                     </div>
-                    <p class="route-description">Extended Machame with extra acclimatization for better summit success.</p>
-                    <p class="route-price">From $2,150</p>
-                    <div class="route-buttons">
+                    <p class="kilimanjaro-route-description">Extended Machame with extra acclimatization for better summit success.</p>
+                    <p class="kilimanjaro-route-price">From $2,150</p>
+                    <div class="kilimanjaro-route-buttons">
                         <a href="7-day-machame.html" class="details">View Itinerary</a>
                     </div>
                 </div>
             </div>
 
-           
         </div>
-    </section>
-
+    </div>
+</section>
    
     </main>
  <!-- ========== COMBINED FAQ SECTION ========== -->
@@ -856,7 +828,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         <strong>Kilimanjaro:</strong> Moderate difficulty but requires endurance. Train with 4-6 hour hikes carrying 5kg pack for 2+ months.<br><br>
-                        <strong>Mount Meru:</strong> Good for intermediates. Focus on stair climbing and leg strength.<br><br>
+                        <strong>Mount kilimanjaro:</strong> Good for intermediates. Focus on stair climbing and leg strength.<br><br>
                         <strong>Oldonyo Lengai:</strong> Technically challenging - requires scrambling experience. Train on steep, uneven terrain.<br><br>
                         All climbs benefit from cardiovascular training and altitude hikes if possible.
                     </div>
@@ -879,7 +851,7 @@
                                 <p>July-Sept busiest</p>
                             </div>
                             <div class="faq-mountain">
-                                <h4>Mount Meru</h4>
+                                <h4>Mount kilimanjaro</h4>
                                 <p>Jun-Feb (Avoid heavy rains Apr-May)</p>
                                 <p>Dec-Feb clearest views</p>
                             </div>
@@ -910,7 +882,7 @@
                             <li>Emergency oxygen and Gamow bags on all climbs</li>
                             <li>Immediate descent protocol for severe AMS</li>
                         </ul>
-                        <strong>Note:</strong> Meru's shorter profile makes AMS less common than Kilimanjaro
+                        <strong>Note:</strong> kilimanjaro's shorter profile makes AMS less common than Kilimanjaro
                     </div>
                 </div>
             </div>
@@ -1125,7 +1097,7 @@
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" ></script>
     <script src="js/main.js"></script>
 </body>
 </html>

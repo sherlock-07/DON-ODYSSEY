@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mount Meru Climbing Packages | Don Odyssey Safaris</title>
+     <link rel="icon"  href="images/DON.jpg" type="image/jpg">
     <meta name="description" content="Climb Tanzania's second highest peak with Don Odyssey Safaris. Ideal preparation for Kilimanjaro with wildlife viewing opportunities. 85% success rate.">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -46,6 +47,7 @@
             transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .meru-route-card:hover {
@@ -89,32 +91,34 @@
             justify-content: flex-end;
             color: white;
             height: 100%;
+            overflow: auto; /* Or overflow: hidden */
+  
         }
 
+        /*
         .meru-route-content h3 {
             margin: 0 0 1rem;
             font-size: 1.6rem;
             color: white;
             font-weight: 600;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        }
+        }       
+        */
 
-        .meru-route-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.2rem;
-            font-size: 0.85rem;
-        }
-
-        .meru-route-meta span {
-            background: rgba(234, 148, 35, 0.85);
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
+        .meru-route-content h3 {
+            margin: 0.1 0.8rem;
+            font-size: 1.6rem;
             color: white;
-            white-space: nowrap;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            position:sticky; /* Changed to sticky */
+            top: 0; /* Stick to the top of its container */
+            z-index: 10; /* Ensure it stays above other content */
+        
+            padding-bottom: 5.5rem; /* Add some space below */
         }
+        
+       
 
         .meru-route-description {
             font-size: 0.95rem;
@@ -222,6 +226,7 @@
                     <li><a href="zanzibar.html">Zanzibar</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                 </ul>
             </nav>
             
@@ -257,7 +262,7 @@
     <div class="mobile-side-menu">
         <div class="mobile-side-menu-header">
             <div class="logo">
-                <img src="images/donald logo-02.jpg" alt="Logo">
+               <img src="images/DON.jpg" alt="Logo"    >
             </div>
             <div class="close-menu">
                 <i class="fas fa-times"></i>
@@ -351,13 +356,13 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="package-gallery">
-                        <img src="images/meru-detail-1.jpg" alt="Mount Meru summit view" class="img-fluid rounded" loading="lazy">
+                        <img src="images/10.webp" alt="Mount Meru summit view" class="img-fluid rounded" >
                         <div class="row">
                             <div class="col-6">
-                                <img src="images/meru-detail-2.jpg" alt="Meru wildlife" class="img-fluid rounded" loading="lazy">
+                                <img src="images/11.webp" alt="Meru wildlife" class="img-fluid rounded">
                             </div>
                             <div class="col-6">
-                                <img src="images/meru-detail-3.jpg" alt="Meru climbers" class="img-fluid rounded" loading="lazy">
+                                <img src="images/12.webp" alt="Meru climbers" class="img-fluid rounded" >
                             </div>
                         </div>
                     </div>
@@ -421,12 +426,8 @@
                         <div class="meru-route-bg" style="background-image: url('images/DON.jpg')"></div>
                         <div class="meru-route-overlay"></div>
                         <div class="meru-route-content">
-                            <h3>Momella Route</h3>
-                            <div class="meru-route-meta">
-                                <span>4 Days</span>
-                                <span>Moderate</span>
-                                <span>Wildlife Viewing</span>
-                            </div>
+                            <h3> 4 Days of Momella Route</h3>
+                          
                             <p class="meru-route-description">The standard route up Meru through lush forest and alpine meadows with wildlife sightings.</p>
                             <p class="meru-route-price">From $1,200</p>
                             <div class="meru-route-buttons">
@@ -441,12 +442,8 @@
                         <div class="meru-route-bg" style="background-image: url('images/meru-fast.jpg')"></div>
                         <div class="meru-route-overlay"></div>
                         <div class="meru-route-content">
-                            <h3>Summit Direct Route</h3>
-                            <div class="meru-route-meta">
-                                <span>3 Days</span>
-                                <span>Challenging</span>
-                                <span>Fast Ascent</span>
-                            </div>
+                            <h3>3 Days Summit Direct Route</h3>
+                           
                             <p class="meru-route-description">Fast-paced ascent for experienced trekkers with spectacular sunrise views from the summit.</p>
                             <p class="meru-route-price">From $950</p>
                             <div class="meru-route-buttons">
@@ -461,16 +458,12 @@
                         <div class="meru-route-bg" style="background-image: url('https://source.unsplash.com/random/600x600?meru-wildlife')"></div>
                         <div class="meru-route-overlay"></div>
                         <div class="meru-route-content">
-                            <h3>Wildlife Experience Route</h3>
-                            <div class="meru-route-meta">
-                                <span>5 Days</span>
-                                <span>Moderate</span>
-                                <span>Extended Safari</span>
-                            </div>
+                            <h3>5 DaysWildlife Experience Route</h3>
+                           
                             <p class="meru-route-description">Extended trek with additional wildlife viewing opportunities in Arusha National Park.</p>
                             <p class="meru-route-price">From $1,450</p>
                             <div class="meru-route-buttons">
-                                <a href="4-day-meru.html" class="details">View Itinerary</a>
+                                <a href="5-day-meru.html" class="details">View Itinerary</a>
                                
                             </div>
                         </div>
